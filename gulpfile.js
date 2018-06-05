@@ -112,7 +112,7 @@ gulp.task('gulp-pug', function gulpPug() {
     return multipipe(
         gulp.src(['app/pug/*.pug'])
         .pipe(data(function(file) {
-            return JSON.parse(fs.readFileSync('app/pug/data/data.json'))
+            // return JSON.parse(fs.readFileSync('app/pug/data/data.json'))
         })),
         (pug({
             pretty: '  '
