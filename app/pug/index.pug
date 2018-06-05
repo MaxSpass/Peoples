@@ -1,0 +1,27 @@
+extends templates/_page.pug
+
+
+append vars
+    - bodyClass = "page-index"
+
+append styles
+
+
+block content
+    .banner-wrapper
+        .banner-content
+            .container
+                .categoryRow.row
+                    .categoryLine.col-md-3.col-lg-2
+                        include blocks/_category__box
+                    .sub__area.col-md-9.col-lg-10
+                        .row
+                            .col-xs-9.col-md-8.col-lg-7
+                                include blocks/_search__box
+                            .col-xs-3.col-md-4.col-md-5
+                                include blocks/_switch-lang__box
+        .banner-footer
+            .banner-footer-wrap
+                img(src='../img/banner-name_xs.png' alt='Бизарт, повышаем продуктивность')
+                //img(src='../img/banner-pantera.png' alt='bizart.com.ua')
+

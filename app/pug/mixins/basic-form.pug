@@ -1,0 +1,14 @@
+mixin basic-form(title, id, placeholder, type, setRegion)
+    div.form-group
+      label(for=id).form-group__label= title
+      if(type == 'textrarea')
+        textarea(id=id placeholder=placeholder).default-input.default-input_textarea
+      else
+        .input-wrap
+          input(id=id placeholder=placeholder, type=type || 'text').default-input
+          if(setRegion)
+            .status-box
+              img.status-box__img(src="img/operator-img.png")
+            .region-box
+              span.region-box__title Ханты-Мансийский автономный округ
+

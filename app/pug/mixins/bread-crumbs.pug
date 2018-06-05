@@ -1,0 +1,12 @@
+mixin bread-crumbs(routes)
+	.container.thin
+		.breadcrumbs__box
+			if routes && routes.length
+				ul.breadcrumbs__list
+					each route, index in routes
+						if index + 1 !== routes.length
+							li.breadcrumbs__item
+									a.breadcrumbs__link(href="/")= route
+						else
+							li.breadcrumbs__item.disabled
+								span.breadcrumbs__link= route

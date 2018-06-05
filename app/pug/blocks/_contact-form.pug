@@ -1,0 +1,21 @@
+.contact__form-box
+    .contact__form-button.button__box
+        .button__inner
+            .button__left
+                .button__text Ваши данные для заказа
+            .button__right
+                .button__ico
+                    span.fa.fa-phone
+    form.contact__form
+        .contact__form-wrap
+            input.contact__form-input.checkValue(id="input_name" name="name" type="text" required)
+            label.contact__form-label.required(for="input_name") Ваше имя
+        .contact__form-wrap
+            input.contact__form-input.checkValue(id="input_phone" name="phone" type="tel" required)
+            label.contact__form-label.required(for="input_phone") Телефон
+        .contact__form-wrap
+            input.contact__form-input.checkValue(id="input_email" name="email" type="email" required)
+            label.contact__form-label.required(for="input_email") E-mail
+        .contact__form-wrap
+            textarea.contact__form-textarea.checkValue(type="text" placeholder="Оставьте Ваше сообщение")
+        button(class="location__submit buttonDark contact__form-submit") Отправить

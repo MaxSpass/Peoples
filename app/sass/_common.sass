@@ -1,0 +1,40 @@
+body,html
+  background-color: $bgColor
+
+// Common
+a:hover,a:focus
+  text-decoration: none
+  outline: none
+  color: #fff
+
+a,a:active,a:visited,button,textarea,select
+  outline: none
+  cursor: pointer
+
+button,textarea,select
+  appearance: none
+
+input
+  outline: none
+
+input,textarea
+  @include placeholder()
+    color: #292929
+    font-weight: 300
+
+ul,ol
+  margin-bottom: 0
+
+.a-bg
+  display: block
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center center
+  transition: all .15s linear
+  padding-bottom: 60%
+
+@include b(lg)
+  .a-bg
+    background-size: 100%
+    &:hover
+      background-size: 110%

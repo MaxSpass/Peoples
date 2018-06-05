@@ -1,0 +1,5 @@
+.idea
+node_modules/
+app/css/**/*.css
+app/*.html
+app/js/bundle.js

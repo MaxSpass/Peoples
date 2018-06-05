@@ -1,0 +1,27 @@
+mixin loan-item()
+  div.loan
+    div.loan__header
+      div.loan-logo-wrapper
+        img(src="/" alt="loan" width=70)
+      div.loan-controls-wrapper
+        a(alt="" href="/" type="button").get-loan.button.button-light.hidden-xs.no-margin Получить заем
+
+    div.loan__body
+      div.loan-properties
+        div.loan-properties__item.loan-property
+          div.loan-property__title Сумма займа:
+          div.loan-property__value 15 000 рублей
+
+        div.loan-properties__item.loan-property
+          div.loan-property__title Срок займа:
+          div.loan-property__value 60 дней
+
+        div.loan-properties__item.loan-property
+          div.loan-property__title Процентная ставка:
+          div.loan-property__value 1,5 в день
+
+        div.loan-properties__item.loan-property
+          div.loan-property__title Вероятность выдачи:
+          div.loan-property__value 89 %
+    div.loan__footer
+      a(alt="" href="/" type="button").get-loan.button.button-light.no-margin Получить заем

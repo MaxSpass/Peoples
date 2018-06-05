@@ -1,0 +1,9 @@
+mixin informationReview(imgSrc, name, date, textReview )
+    .review
+        div.review__img(style="background-image: url("+ imgSrc +")")
+
+        div.review__inform
+            p.review__title
+                span.review__title-name #{name}
+                span.review__title-date #{date}
+            p.review__review-text.text #{textReview}
