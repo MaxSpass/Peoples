@@ -20,13 +20,9 @@ html
             link(rel="stylesheet" href="css/style.css")
 
     body.body__loader(class=bodyClass)
-        .body__content
-            .body__wrapper
-                block header
-                    header.header__main
-                .main-content(class=mainClass)
-                    block content
-
+        block header
+        .main-content(class=mainClass)
+            block content
 
             block footer
                 footer.footer
