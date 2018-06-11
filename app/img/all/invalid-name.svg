@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="129" height="129" viewBox="0 0 129 129">
+    <defs>
+        <radialGradient id="a" r="49.414%" fx="50%" fy="50%">
+            <stop offset="0%" stop-color="#03AEBF" stop-opacity=".382"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity=".164"/>
+        </radialGradient>
+        <circle id="c" cx="63.5" cy="63.5" r="32.5"/>
+        <filter id="b" width="196.9%" height="196.9%" x="-48.5%" y="-45.4%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius=".5" result="shadowSpreadOuter1"/>
+            <feOffset dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        </filter>
+        <path id="d" d="M67.12 53L72 76l-23-4.88z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <circle cx="64.5" cy="64.5" r="64.5" fill="url(#a)"/>
+        <use fill="#000" filter="url(#b)" xlink:href="#c"/>
+        <use fill="#FCFCFC" stroke="#ECECEC" xlink:href="#c"/>
+        <g transform="rotate(-45 60.5 64.5)">
+            <use fill="#8F8F8F" xlink:href="#d"/>
+            <path stroke="#B5B5B5" d="M66.821 54.005L50.005 70.821l21.346 4.53-4.53-21.346z"/>
+        </g>
+    </g>
+</svg>

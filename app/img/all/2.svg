@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="245" height="173" viewBox="0 0 245 173">
+    <defs>
+        <radialGradient id="a" cy="52.061%" r="36.576%" fx="50%" fy="52.061%" gradientTransform="matrix(0 1 -.98923 0 1.015 .02)">
+            <stop offset="0%" stop-color="#4670EA"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity=".022"/>
+        </radialGradient>
+    </defs>
+</svg>
