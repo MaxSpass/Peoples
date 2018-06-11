@@ -15,12 +15,40 @@ html
         //link(rel="shortcut icon" href="img/favicon.ico" type="image/x-icon")
         title Peoples
         block styles
+            link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
             link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&subset=cyrillic")
             link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
             link(rel="stylesheet" href="css/style.css")
 
     body.body__loader(class=bodyClass)
         block header
+            header.header__main
+                .container
+                    .header__inner
+                        .header__logo
+                            a.link.header__logo-wrap(href="Люди digital")
+                                img.header__logo-img(src="img/logo.png" alt="Люди digital")
+                        nav.header__menu
+                            ul.header__list
+                                li.header__item
+                                    a.link.header__link О нас
+                                li.header__item
+                                    a.link.header__link Услуги
+                                    ul.header__list_sub
+                                        li.header__item_sub
+                                            a.link.header__link_sub Контекстная реклама
+                                        li.header__item_sub
+                                            a.link.header__link_sub Таргетинговая реклама
+                                li.header__item
+                                    a.link.header__link Нанять
+                                li.header__item
+                                    a.link.header__link Контакты
+                        ul.header__contact-list
+                            li.header__contact-item
+                                a.link.header__contact-link.icon-call(href="tel:+380663492552") +38 (066) 349 25 52
+
+
+
         .main-content(class=mainClass)
             block content
 

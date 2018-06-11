@@ -1,11 +1,8 @@
+body
+  font-family: 'Roboto', 'Arial', sans-serif
+
 body,html
   background-color: $bgColor
-
-// Common
-a:hover,a:focus
-  text-decoration: none
-  outline: none
-  color: #fff
 
 a,a:active,a:visited,button,textarea,select
   outline: none
@@ -14,8 +11,8 @@ a,a:active,a:visited,button,textarea,select
 button,textarea,select
   appearance: none
 
-input
-  outline: none
+input, a, img
+  outline: none !important
 
 input,textarea
   @include placeholder()
@@ -33,8 +30,18 @@ ul,ol
   transition: all .15s linear
   padding-bottom: 60%
 
+a.link
+  transition: all .25s ease
+  &:hover
+    color: $orange
+    text-decoration: none
+
 @include b(lg)
   .a-bg
     background-size: 100%
     &:hover
       background-size: 110%
+
+
+.container
+  max-width: 1000px
