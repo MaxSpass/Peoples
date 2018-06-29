@@ -1,34 +1,256 @@
 //section.section
 //  h1.h1.bold Интернет-маркетинг
 //  h2.h2 для малого и среднего бизнеса
+/*Clepsyndra - SoundCloud Music*/
 
-ul.people__list
+.peoples__section
 
+.peoples__box
+  position: relative
+  margin: 140px 0 10px 0
+  padding: 90px 0 20px 0
+  background: url('../img/curve.svg')
+  background-position: 100% center
+  background-repeat: no-repeat
+  background-size: 100% 620px
+  z-index: 2
 
-li.people__item
+.people__list
+  display: flex
 
+.people__item
+  position: relative
+  width: 33.333%
+  &.people__item--lola
+    .people__img
+      left: -75%
+      min-width: 510px
+      transform: scale(-1, 1)
+  &.people__item--denis
+    .people__img
+      left: -50px
+      max-height: 620px
+  &.people__item--vlad
+    .people__img
+      min-width: 390px
+      left: auto
+      right: 20px
 
 .people__portrait
+  max-width: 170px
+  z-index: 1
 
 
 .people__title
+  display: inline-block
+  &:hover
+    text-decoration: none
 
 
-span.people__name
+.people__name
+  display: inline-block
+  margin-bottom: 5px
+  letter-spacing: 2.2px
+  color: #2a2a2a
+  transition: .25s ease-in
+  font-size: 26px
+  font-weight: 600
+  &:hover
+    color: $orange
 
 
-span.people__social
+.people__social
+  display: inline-block
+  width: 24px
+  height: 24px
+  background-size: contain
+  background-repeat: no-repeat
+  vertical-align: sub
+  margin-left: 10px
+  &--telegram
+    background-image: url('../img/used/telegram.svg')
+  &--facebook
+    background-image: url('../img/used/facebook.svg')
+  &--instagram
+    background-image: url('../img/used/instagram.svg')
 
 
 .people__special
-
+  font-size: 15px
+  line-height: 1.2
 
 .people__img-wrap
+  position: relative
+  padding: 55%
+  margin: 100px 0 10px 0
 
 
 .people__img
+  position: absolute
+  left: 0
+  bottom: 0
+  max-width: 100%
+  height: auto
+  user-select: none
 
 
 .people__desc
   p
-  a.link.link-arrow
+    font-size: 16px
+a.people__link
+  margin-top: 15px
+  font-weight: 500
+
+
+@include b(desktop)
+  .people__list
+    align-items: flex-end
+  .people__item
+    &:hover
+      .people__desc
+        transform: scale(1) translateX(-50%)
+        opacity: .95
+    .people__portrait
+      position: absolute
+      top: 0
+      left: 0
+    &.people__item--lola
+      .people__portrait
+        top: -170px
+    &.people__item--denis
+      .people__portrait
+        top: -150px
+        right: 35px
+        left: auto
+    &.people__item--vlad
+      .people__portrait
+        top: -135px
+        left: 30px
+  .people__img-wrap
+    background-image: none !important
+  .people__desc
+    position: absolute
+    left: 50%
+    bottom: 155px
+    width: 300px
+    border-radius: 5px
+    background: #fff
+    box-shadow: 0 2px 4px 0 rgba(178, 168, 240, 0.35)
+    padding: 25px 17px
+    transform: scale(0) translateX(-50%)
+    opacity: 0
+    transition: .35s ease-out
+    transform-origin: left bottom
+    z-index: 1
+
+
+@include b(tablet)
+  .peoples__box
+    padding: 0
+    margin-top: 45px
+    background-image: none !important
+  .people__list
+    flex-wrap: wrap
+    justify-content: space-between
+  .people__img
+    display: none
+  .people__item
+    display: flex
+    margin: 0 auto 20px auto
+    flex-wrap: wrap
+    flex-basis: 220px
+    justify-content: center
+    .people__img-wrap
+      width: 200px
+      height: 200px
+      margin: 0 0 10px 0
+      padding: 0
+      border-radius: 50%
+      border: 1px solid #c5d4fa
+      background: #f2edf5
+      order: -1
+    &.people__item--lola
+      .people__img-wrap
+        transform: scale(-1, 1)
+        background-position: 19% 0%
+        background-size: 275%
+    &.people__item--denis
+      .people__img-wrap
+        background-position: 60% 0%
+    &.people__item--vlad
+      .people__img-wrap
+        background-position: 66% 4%
+        background-size: 270%
+    .people__desc p
+      display: none
+    .people__link
+      margin-top: 10px
+
+@include b(sm)
+  //.people__item
+  //  flex-wrap: wrap
+  //  flex-direction: column
+
+@include b(xxs)
+  .people__item
+    width: 100px
+    max-width: 320px
+    flex-basis: 100%
+    flex-wrap: nowrap
+    margin-bottom: 40px
+  &.people__item--denis .people__img-wrap
+    background-size: 100%
+  .people__img-wrap
+    position: relative
+    &:after
+      content: ''
+      width: 24px
+      height: 24px
+      display: block
+      position: absolute
+      top: 22%
+      right: -5px
+      border-radius: 50%
+      background-size: contain
+      background-repeat: no-repeat
+      //background: red !important
+  &.people__item--lola .people__img-wrap:after
+    background-image: url('../img/used/instagram.svg')
+    left: -5px
+  &.people__item--denis .people__img-wrap:after
+    background-image: url('../img/used/facebook.svg')
+  &.people__item--vlad .people__img-wrap
+    background-position: 70% 4% !important
+    &:after
+      background-image: url('../img/used/telegram.svg')
+  .people__list
+    justify-content: center
+    .people__img-wrap
+      width: 112px
+      height: 112px
+      flex-basis: 112px
+    .people__item
+      &>div
+        width: 50%
+      .people__additional
+        box-sizing: border-box
+      &:not(:nth-child(even))
+        .people__additional
+          padding-left: 14px
+      &:nth-child(even)
+        .people__additional
+          padding-right: 14px
+          order: -2
+    .people__name
+      margin-bottom: 0
+    .people__special
+      font-size: 14px
+    .people__portrait
+      max-width: 100%
+    .people__link
+      margin-top: 5px
+  .people__social
+    display: none
+
+@include b(xxs)
+  body

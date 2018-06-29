@@ -17,7 +17,13 @@ const $win = $(window);
 //     initDotDotDot();
 // })();
 
-
+const setBgByImg = () => {
+    $('.people__img-wrap').each((i,el)=>{
+        const $this = $(el);
+        const src = $this.find('img').attr('src');
+        $this.css('background-image',`url("${src}")`)
+    })
+};
 
 const alertForDisableLinks = (e) => {
     $('a').on('click', (e) => {
@@ -55,6 +61,7 @@ $doc.on('ready', () => {
     alertForDisableLinks();
     checkEmptyFields();
     toggleMobileMenu();
+    setBgByImg();
 });
 
 $win.on('resize', () => {

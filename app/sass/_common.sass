@@ -1,6 +1,7 @@
 body
   color: #2a2a2a
   font-family: 'Roboto', 'Arial', sans-serif
+  margin-bottom: 200px
 
 body,html
   background-color: $bgColor
@@ -37,6 +38,27 @@ a.link
     color: $orange
     text-decoration: none
 
+a.linked
+  display: inline-block
+  letter-spacing: .5px
+  font-size: 16px
+  transition: all .25s ease
+  color: $orange
+  user-select: none
+  &:hover
+    color: $orange_light
+    text-decoration: none
+  &:active
+    text-decoration: underline
+  &-arrow
+    &:after
+      display: inline-block
+      content: ''
+      background: url('../img/used/link-arrow.svg') center center no-repeat
+      width: 15px
+      height: 22px
+      vertical-align: middle
+
 @include b(lg)
   .a-bg
     background-size: 100%
@@ -46,6 +68,8 @@ a.link
 
 .container
   max-width: 1000px
+  &--limited
+    max-width: 700px
 
 .thin
   font-weight: 300
@@ -56,6 +80,15 @@ a.link
 .bold
   font-weight: 700
 
+.text
+  line-height: 1.33
+  color: #2a2a2a
+  font-size: 18px
+  &--light
+    color: #677987
+  &--center
+    text-align: center
+
 // typography
 h1,.h1,
 h2,.h2,
@@ -64,6 +97,7 @@ h4,.h4,
 h5,.h5
   color: inherit
   font-family: inherit
+  margin-bottom: 5px
 
 h1,.h1
   font-size: 42px
@@ -76,3 +110,21 @@ h3,.h3
 h4,.h4
 
 h5,.h5
+
+@include b(xs)
+  h1,.h1,
+  h2,.h2
+    line-height: 1
+    margin-bottom: 0
+    font-size: 28px
+
+.preview-text
+  text-align: center
+
+@include b(xxs)
+  .preview-text--limit
+    max-width: 213px
+    margin: 0 auto
+
+.mt-5
+  margin-top: 5px
