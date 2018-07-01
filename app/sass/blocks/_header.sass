@@ -79,10 +79,9 @@
   .header__nav
     display: flex
     position: absolute
-    padding: 15px
     right: 0
     top: 0px
-    padding-top: 115px
+    padding: 115px 15px 30px 15px
     background: #fff
     margin-left: auto
     text-align: right
@@ -140,14 +139,12 @@
       position: relative
       padding-right: 10px
       &:before
-        content: ''
         width: 100%
         height: 20px
         position: absolute
         left: 0
         right: 0
         top: 100%
-        //background: red
       .header__link
       .openSubMenu
         display: inline-block
@@ -174,9 +171,11 @@
       &:hover
         & > .header__link
           color: $orange
+        &:before
+          content: ''
         .header__list_sub
           opacity: 1
-        //transform: scale(1)
+          transform: translateX(-50%) scale(1)
         .openSubMenu
           background: $orange
 
@@ -193,7 +192,7 @@
     box-shadow: 0 2px 4px 0 rgba(178, 168, 240, 0.35)
     border: solid 1px rgba(178, 168, 240, 0.23)
     font-size: 18px
-    transform: translateX(-50%)
+    transform: translateX(-50%) scale(0)
     transform-origin: center top
     transition: all .35s ease
     opacity: 0

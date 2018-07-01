@@ -1,5 +1,6 @@
 const $doc = $(document);
 const $win = $(window);
+const isSlider = $('#servicesSlider').length;
 let isMobile = false;
 let isTablet = false;
 let isDesktop = false
@@ -182,9 +183,9 @@ const checkSubMenus = () => {
     })
 }
 
-const mainFormHandler = () => {
-    const $form = $('#mainForm');
-    const $submitButton = $form.find('.formSubmit');
+const formHandler = () => {
+    const $submitButton = $('button[type="submit"]');
+    const $form = $submitButton.closest('form');
     $submitButton.click(function(e){
         e.preventDefault();
         // console.log('this',$submitButton)
@@ -204,28 +205,55 @@ const mainFormHandler = () => {
     });
 }
 
-const smoothScrollToAnchor = () => {
-    var $page = $('html, body');
-    $('a[href^="#"]').click(function(e) {
-        e.preventDefault();
-        $page.animate({
-            scrollTop: $($.attr(this, 'href')).offset().top - 25
+const scrollToAnchor = (anchor) => {
+    const $el = $(anchor);
+    const is = $el.length;
+
+    if(is) {
+        $('html, body').animate({
+            scrollTop: $el.offset().top - 25
         }, 300);
-        return false;
+    } else {
+        localStorage.setItem('anchor', anchor)
+        window.location = '/';
+    }
+
+    return false;
+}
+
+const smoothScrollToAnchor = () => {
+    $('a[href^="#"]').click(function(e) {
+        const href = $(this).attr('href');
+        e.preventDefault();
+        scrollToAnchor(href);
     });
 }
 
 const checkWinOffset = () => {
     const winOffset = window.pageYOffset
     const $backToTopButton = $('.back-top');
-    if(winOffset > 100) {
-        $backToTopButton.removeClass('not-visible')
-        // not-visible
-    } else {
-        $backToTopButton.addClass('not-visible')
+    (winOffset > 100) ? $backToTopButton.removeClass('not-visible') : $backToTopButton.addClass('not-visible');
+}
+
+
+const checkAnchorFromStorage = () => {
+    const storageAnchor = localStorage.getItem('anchor')
+
+    if(storageAnchor) {
+        localStorage.removeItem('anchor')
+        setTimeout(()=>{
+            scrollToAnchor(storageAnchor)
+        },500)
     }
 }
 
+
+const inputMaskInit = () => {
+    $(".inputMask").inputmask({
+        "mask": "+38(099)999-99-99",
+        "clearIncomplete": true
+    });
+}
 
 $doc.on('ready', () => {
     checkViewport();
@@ -236,9 +264,11 @@ $doc.on('ready', () => {
     initServicesCarousel();
     checkTextareaLength();
     checkSubMenus();
-    mainFormHandler();
+    formHandler();
     smoothScrollToAnchor();
     checkWinOffset();
+    checkAnchorFromStorage();
+    inputMaskInit();
 });
 
 $win.on('scroll', ()=>{
@@ -250,13 +280,14 @@ $win.on('resize', () => {
 
     const winWidth = $win.width();
 
+
     if (winWidth > 991) {
         $('body').removeClass('mobile-on');
         $('#btnMobile .burger').removeClass('active');
     }
 
-    if(isMobile || isDesktop) {
-        if(servicesSliderInited) {
+    if(isMobile || isDesktop && servicesSliderInited) {
+        if(isSlider && $('#servicesSlider').data('owl.carousel')) {
             $('#servicesSlider').data('owl.carousel').destroy();
             servicesSliderInited = false;
         };

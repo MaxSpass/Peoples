@@ -1,0 +1,295 @@
+.back__area
+  display: none
+  margin-top: 45px
+
+
+.back__link
+
+
+.digital__box
+  margin-bottom: 40px
+
+
+.digital__inner
+  //background-image: url('../img/svg/curve_mini.svg')
+  margin-top: 45px
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: contain
+
+
+.digital__column
+  position: relative
+  max-width: 540px
+  background: rgba(#fff, .75)
+  box-sizing: border-box
+  border-radius: 10px
+  box-shadow: 0 2px 4px 0 rgba(178, 168, 240, 0.35)
+  flex-basis: 540px
+  flex-grow: 1
+  &.digital__text
+    padding: 110px 65px 85px 65px
+    margin-top: 2px
+    margin-left: auto
+    font-size: 20px
+    p
+    .digital__order
+      margin-left: 0
+      margin-top: 35px
+      max-width: 170px
+
+.digital__exp
+  display: flex
+  position: relative
+  &:before
+    position: absolute
+    right: -25px
+    bottom: -2px
+    content: ''
+    width: 470px
+    height: 560px
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center center
+  &.lola:before
+    background-image: url('../img/lola.png')
+  &.denis:before
+    background-image: url('../img/denis.png')
+  &.vlad:before
+    background-image: url('../img/vlad.png')
+
+
+.digital__exp-left
+  padding: 40px 50px 50px 50px
+
+
+.digital__name
+  font-size: 60px
+  font-weight: 600
+  line-height: 1
+  letter-spacing: 9.9px
+  color: #22014b
+  position: relative
+  padding-bottom: 40px
+  &:after
+    content: ''
+    display: block
+    width: 100%
+    height: 15px
+    position: absolute
+    bottom: 15px
+    left: 0px
+    right: 0px
+    background: $orange
+
+.digital__special
+  font-size: 20px
+  font-weight: 700
+  text-align: center
+  margin-bottom: 60px
+
+.digital__person-info
+  font-size: 18px
+
+.digital__desc
+
+
+.digital__list
+
+
+.digital__item
+
+
+.digital__link
+  margin-top: 50px
+  font-weight: 500
+  font-size: 20px
+  &-social
+    position: relative
+    padding-left: 45px
+    &:after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+      width: 32px
+      height: 32px
+      background-size: contain
+      background-repeat: no-repeat
+      background-position: center center
+    &.instagram
+      &:after
+        background-image: url('../img/svg/instagram.svg')
+    &.facebook
+      &:after
+        background-image: url('../img/svg/facebook.svg')
+    &.telegram
+      &:after
+        background-image: url('../img/svg/telegram.svg')
+
+
+
+.digital__exp-right
+
+
+.digital__foto
+  max-width: 100%
+  height: auto
+
+.invoke__box
+  background: #536173
+
+
+.invoke__inner
+  display: flex
+  padding: 120px 0
+
+.invoke__text
+  max-width: 330px
+  margin-top: 15px
+  &-title
+    font-size: 24px
+    font-weight: 600
+    color: #fff
+
+  &-desc
+    font-size: 20px
+    font-weight: 300
+    color: #fff
+
+
+//.invoke__text,
+.invoke__form-wrap
+  padding-left: 50px
+  flex-grow: 1
+  //width: 50%
+
+.invoke__form
+  max-width: 290px
+
+.invoke__form-textgroup
+
+
+.invoke__form-input
+  padding-right: 0
+  color: #fff
+  font-size: 14px
+  background: transparent
+  border-bottom: 2px solid rgba(#fff,.4)
+  @include placeholder()
+    color: #fff
+
+.invoke__form-submit
+  width: 120px
+  margin: 20px 0 0 0
+  height: 36px
+  font-size: 16px
+
+.strategy__box
+  background: #fff
+
+.strategy__inner
+  padding-top: 60px
+  padding-bottom: 70px
+
+.strategy__ico
+
+.strategy__text
+  max-width: 590px
+  position: relative
+  padding-left: 150px
+  &:before
+    content: ''
+    width: 85px
+    height: 70px
+    background: url('../img/invalid-name.png') center no-repeat
+    background-size: contain
+    position: absolute
+    left: 0
+    top: 0
+
+.strategy__desc
+  font-size: 24px
+
+.grey__box
+  height: 48px
+  background-color: rgba(178, 168, 240, 0.23)
+
+.page
+  .contact__area
+    border: solid 1px #e2e2e2
+    @include b(desktop)
+      margin: -150px 0 -20px auto
+  //  margin: 0
+  //  margin-left: auto
+
+  .contact__item
+    margin-top: 30px
+
+  .contact__ready-text
+    max-width: 400px
+
+  .contact__phones-social
+    color: $grey
+    margin-top: 30px
+    font-size: 20px
+
+  .contact__ready-bold
+    margin-top: 20px
+    font-size: 38px
+    font-weight: 600
+    line-height:  1.2
+
+@include b(desktop)
+  .page
+    .thin
+      padding-left: 30px
+      padding-right: 30px
+
+@include b(tablet)
+  .page
+
+    .invoke__inner
+      padding: 50px 0
+      flex-direction: column
+
+    .invoke__text,
+    .invoke__form
+      margin: 0 auto
+
+    .invoke__form-wrap
+      padding-left: 0
+
+    .invoke__form
+      margin-top: 20px
+      max-width: 330px
+
+    .strategy__inner
+      padding-top: 30px
+      padding-bottom: 30px
+
+    .strategy__text
+      padding-left: 40px
+      .strategy__desc
+        font-size: 20px
+      &:before
+        width: 20px
+        height: 25px
+
+    .contact__inner
+      margin-top: 30px
+
+    .contact__phones
+      padding-top: 0
+      display: flex
+      flex-direction: column
+      align-items: center
+
+    .contact__ready-text
+      font-size: 18px
+
+    .contact__ready-bold
+      font-size: 25px
+
+

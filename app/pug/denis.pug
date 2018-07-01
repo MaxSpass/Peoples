@@ -1,0 +1,96 @@
+extends templates/_page.pug
+
+append vars
+    - bodyClass = "page"
+
+append styles
+
+block content
+
+    ul.phantom-phone-list.hidden-md.hidden-lg.hidden-xs
+        li.phantom-phone-item
+            a.link.phantom-phone-link.icon-call(href="tel:+380663492552") +38 (066) 349 25 52
+
+    .container
+        .back__area
+            .back__link Назад
+
+    section.digital__box
+        .container
+            .digital__inner.thin
+                .digital__exp.denis
+                    .digital__column.digital__exp-left
+                        h1.digital__name Денис
+                        h2.digital__special Таргетинговая реклама
+                        .digital__person-info
+                            p.digital__desc Маркетолог со стажем 5 лет. Сертифицированный партнер Google Adwords. За эти годы рекламировал разные проекты:
+                            ul.digital__list
+                                li.digital__item От продаж Сельхозтехники до Лекарственных препаратов
+                                li.digital__item От Риэлторских услуг до Программ для похудения
+                                li.digital__item От интернет-магазинов до мелких лендингов
+                        a.digital__link.digital__link-social.facebook.linked(href="https://www.facebook.com/volosovd") Готов обсудить ваш проект
+                .digital__column.digital__text
+                    p Маркетинг любит профессионалов. Если раньше вашу рекламу вел, знакомый , сосед  или племянник, я гарантирую рост продаж на 30% уже через 2 месяца
+                    a.digital__order.button.linked(href="#contacts") Заказать
+
+    .invoke__box
+        .container
+            .invoke__inner.thin
+                .invoke__text
+                    .invoke__text-title Уже есть аккаунт Adwords, но результаты так себе?
+                    .invoke__text-desc Оставьте заявку на бесплатный аудит аккаунта и я скажу, что вы делали не так.
+                .invoke__form-wrap
+                    form.invoke__form#invokeForm
+                        input(type="hidden" name="adwords_request")
+                        input(type="hidden" name="page_denis")
+                        .contact__form-textgroup.invoke__form-textgroup
+                            input.contact__form-input.invoke__form-input.inputMask(required type="tel" name="phone" placeholder="Номер телефона")
+                        .contact__form-textgroup.invoke__form-textgroup
+                            input.contact__form-input.invoke__form-input(required type="url" name="url" placeholder="Ссылка на сайт вашего бизнеса")
+                        button.invoke__form-submit.button.button-dark.video__button(form="invokeForm" type="submit") Отправить
+
+    .strategy__box
+        .container
+            .strategy__inner.thin
+                .strategy__ico
+                .strategy__text
+                    .strategy__desc <b>Основа моей стратегии в работе</b> <br> — относись к бизнесу клиента как к своему. Поэтому делаю больше, чем просто рекламу, чтобы увеличить эффективность инвестиций. Обращайтесь, будем вместе работать над улучшением показателей вашего сайта.
+
+    .grey__box
+
+    .contact__block#contacts
+        .container
+            .contact__inner
+                .contact__phones
+                    .contact__ready-text Типичные агентства скрыты за экранами мониторов. Мы — живые люди и готовы к личной встрече в Киеве и Днепре
+                    .contact__ready-bold Я готов <br> к личной встрече <br> в Днепре
+                    ul.contact__phones-list
+                        li.contact__item
+                            .contact__people
+                                a.contact__phone.link.icon-call(href="tel:0663492552") +38 066 349 25 52
+                    a.contact__phones-social.digital__link-social.facebook.linked(href="https://www.facebook.com/volosovd") Мой facebook
+                .contact__area
+                    form.contact__form#mainForm(autocomplete="off")
+                        .thanks__box
+                            .thanks__title Спасибо
+                            .thanks__text мы вам перезвоним
+                        input(type="hidden" name="main")
+                        input(type="hidden" name="page_denis")
+                        .contact__form-fields
+                            .contact__form-textgroup.required
+                                input.contact__form-input(required type="text" name="name" placeholder="Имя")
+                            .contact__form-textgroup.required
+                                input.contact__form-input.inputMask(required type="tel" name="phone" placeholder="+ 38 (__) ___  __  __")
+                            .contact__form-textgroup
+                                input.contact__form-input(type="email" name="email" placeholder="@-mail")
+                        .contact__form-package
+                            .contact__form-checkgroup.w100
+                                input.contact__form-switcher(id="context_ads" checked="checked" type="checkbox" name="context_ads")
+                                label.contact__form-checkbox(for="context_ads")
+                                    span.box
+                                    span.type Контекстная реклама
+                        .contact__form-textarea-wrap
+                            textarea.contact__form-textarea#textArea(type="text" maxlength="200" name="comment")
+                            span.text-placeholder Адрес вашего сайта <br> и другие комментарии вопросы
+                            span.count
+                        button.button.button-filled.contact__form-submit.formSubmit(type="submit") Отправить
