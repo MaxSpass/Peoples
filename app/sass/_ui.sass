@@ -2,15 +2,19 @@
 #btnMobile
   position: absolute
   top: 25px
-  right: 25px
+  right: 12px
   display: block
-  width: 44px
+  width: 36px
   cursor: pointer
   z-index: 1002
+  margin-top: 20px
 
 .burger
   position: relative
-  height: 32px
+  width: 100%
+  //width: 36px
+  height: 26px
+  cursor: pointer
 
 .burger i,.burger::after,.burger::before
   display: block
@@ -18,7 +22,7 @@
   left: 0
   width: 100%
   height: 2px
-  background: #fff
+  background: $orange
   content: ''
 
 .burger i
@@ -34,20 +38,136 @@
   top: 0
   transition: background .125s linear 0s,top .125s linear .125s,transform .125s linear 0s
 
-.burger.active i
-  opacity: 0
-  width: 0
-  left: 50%
+.mobile-on
+  .burger i
+    opacity: 0
+    width: 0
+    left: 50%
 
-.burger.active::after
-  bottom: 50%
-  transform: translate(0,50%) rotate(45deg)
-  transition: bottom .125s linear 0s,transform .125s linear .125s
+  .burger::after
+    bottom: 50%
+    transform: translate(0,50%) rotate(45deg)
+    transition: bottom .125s linear 0s,transform .125s linear .125s
 
-.burger.active::before
-  top: 50%
-  transform: translate(0,-50%) rotate(135deg)
-  transition: top .125s linear 0s,transform .125s linear .125s
+  .burger::before
+    top: 50%
+    transform: translate(0,-50%) rotate(135deg)
+    transition: top .125s linear 0s,transform .125s linear .125s
 
 .burger.green i,.burger.green::after,.burger.green::before
   background-color: #30b365
+
+
+.button
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 230px
+  height: 48px
+  margin: 0 auto
+  line-height: 1
+  vertical-align: middle
+  text-align: center
+  transition: all .3s ease-in
+  border-radius: 50px
+  background: #fff
+  color: $orange
+  border: 2px solid $orange
+  font-size: 20px
+  user-select: none
+  &:hover
+    text-decoration: none
+  &-filled
+    color: #fff
+    background: $orange
+    &:hover,&:active,&:focus
+      color: #fff
+  &-light
+    color: $orange
+    &:hover,&:active,&:focus
+      color: $orange
+  &-dark
+    background: transparent
+    box-shadow: 0 0 30px #a8badc
+    &:hover,&:active,&:focus
+      color: $orange
+
+
+.back-top
+  display: block
+  cursor: pointer
+  width: 62px
+  height: 62px
+  background: url(../img/used/btn-up-static.svg) center center no-repeat
+  background-size: contain
+  border-radius: 50%
+  transition: all .3s ease
+  opacity: 1
+  &:hover
+    opacity: .5
+
+
+$pulseColor: #fcfcfc
+$pulseAfterColor: $pulseColor
+//$pulseAfterColor: #6f98fc
+
+
+.triangle
+  display: block
+  width: 0
+  height: 0
+  border-top: 12px solid transparent
+  border-bottom: 12px solid transparent
+  border-left: 20px solid #8f8f8f
+  z-index: 2
+
+.pulse
+  display: block
+  width: 65px
+  height: 65px
+  border-radius: 50%
+  animation: pulseButton 3s infinite
+  transform: scale(1)
+  &:hover
+    animation: none
+    &:before
+      animation: none
+  &:before,&:after
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 0
+    right: 0
+    bottom: 0
+    top: 0
+    background: $pulseColor
+    transition: all .3s ease-in
+    border-radius: 50%
+    box-shadow: 0 0 0 rgba($pulseColor, 0.4)
+    animation: pulseAfter 3s infinite
+    z-index: 0
+  &:before
+    animation-delay: .3s
+  &:after
+    animation-delay: .6s
+
+
+@keyframes pulseButton
+  0%
+    transform: scale(1.2)
+    box-shadow: 0 0 0 0 rgba($pulseAfterColor, 0.5)
+  70%
+    box-shadow: 0 0 0 30px rgba($pulseAfterColor, 0)
+  100%
+    box-shadow: 0 0 0 0 rgba($pulseAfterColor, 0)
+
+@keyframes pulseAfter
+  0%
+    box-shadow: 0 0 0 0 rgba($pulseAfterColor, 0.5)
+  70%
+    box-shadow: 0 0 0 30px rgba($pulseAfterColor, 0)
+  100%
+    box-shadow: 0 0 0 0 rgba($pulseAfterColor, 0)
+
+

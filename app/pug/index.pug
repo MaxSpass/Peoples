@@ -7,11 +7,14 @@ append vars
 append styles
 
 block content
-    section.section.peoples__section
+    section.section.peoples__section#about
         .container
             .preview-text
                 h1.h1.bold Интернет-маркетинг
                 h2.h2.thin.mt-5 для малого и среднего бизнеса
+            ul.phantom-phone-list.hidden-md.hidden-lg
+                li.phantom-phone-item
+                    a.link.phantom-phone-link.icon-call(href="tel:+380663492552") +38 (066) 349 25 52
         .peoples__box
             .container
                 ul.people__list
@@ -20,46 +23,257 @@ block content
                             img.people__img(src="/img/people/main-Лола.png")
                         .people__additional
                             .people__portrait
-                                a.people__title(href="#")
+                                a.people__title(href="https://www.instagram.com/a_wo_takoe")
                                     span.people__name Лола
                                     span.people__social.people__social--instagram
                                 .people__special Фото и контент для соц.сетей
                             .people__desc
                                 p Привет! Всё, что касается контента – это про меня. Я работала в агентстве над такими проектами, как Сушия, 0000000 <br>Вела инстаграм-страницы магазина одежды «FLOW», магазинов косметики Inglot.
-                                a.linked.linked-arrow.people__link Подробно
+                                a.linked.linked-arrow.people__link(href="https://www.instagram.com/a_wo_takoe") Подробно
                     li.people__item.people__item--denis
                         .people__img-wrap
                             img.people__img(src="/img/people/main-денис.png")
                         .people__additional
                             .people__portrait
-                                a.people__title(href="#")
+                                a.people__title(href="https://www.facebook.com/volosovd")
                                     span.people__name Денис
                                     span.people__social.people__social--facebook
                                 .people__special Реклама в Facebook, Instagram
                             .people__desc
                                 p Привет! Я в маркетинге с 2012го. Сооснователь сети Типичный Днепр, работал в холдингах UMH Фото Group и 1+1 медиа над такими проектами, как Комсомольская Правда в Украине, ovva.tv, 1+1video, Media Hack Weekend 2017 и W:here. Продвигал соцсети турагентств, event-агентств
-                                a.linked.linked-arrow.people__link Подробно
+                                a.linked.linked-arrow.people__link(href="https://www.facebook.com/volosovd") Подробно
                     li.people__item.people__item--vlad
                         .people__img-wrap
                             img.people__img(src="/img/people/main-Влад.png")
                         .people__additional
                             .people__portrait
-                                a.people__title(href="#")
+                                a.people__title(href="https://t.me/Bezginov")
                                     span.people__name Влад
                                     span.people__social.people__social--telegram
                                 .people__special Контекстная реклама в Google и Яндекс
                             .people__desc
                                 p Более 5 лет в сфере интернет рекламы. Сертифицированный партнер Google Adwords. <br>Adwords — хитрый змей, но я покажу как его обуздать и использовать на благо бизнеса.
-                                a.linked.linked-arrow.people__link Подробно
+                                a.linked.linked-arrow.people__link(href="https://t.me/Bezginov") Подробно
 
 
     section.section
         .container.container--limited
             .preview-text.preview-text--limit
                 span.h1.thin Любой бизнес &mdash; это люди
-                h2.h1.bold.mt-5 Мы ваши люди.
+                h2.h1.bold.mt-5 Мы ваши люди
             br
             br
             p.text.text--light.text--center Мы решаем проблему маркетинга для малого и среднего бизнеса. Мы знаем, что держать маркетологов в штате затратно. Обращаться в рекламные агенства – дорого. Вести маркетинг самостоятельно – безрезультатно.
             br
             p.text.text--center Мы фрилансеры со стажем. Успели поработать в крупных компаниях, интернет-магазинах, социальных проектах и сошлись в одну команду, чтобы повышать продажи!
+        .container
+            .services__box#services
+                .services__inner#servicesSlider
+                    .services__item
+                        .services__item-inner
+                            .services__ico
+                                img(src="img/ic-context-adv.svg" alt="Контекстная реклама в Google и Яндекс")
+                            p.services__text Контекстная реклама в Google и Яндекс
+                            a.services__link.linked.linked-arrow.linked-grey(href="#" title="Контекстная реклама в Google и Яндекс") Подробнее
+                    .services__item
+                        .services__item-inner
+                            .services__ico
+                                img(src="img/ic-target-adv.svg" alt="Таргетинговая реклама Facebook и Instagram.")
+                            p.services__text Таргетинговая реклама Facebook и Instagram.
+                            a.services__link.linked.linked-arrow.linked-grey(href="#" title="Таргетинговая реклама Facebook и Instagram.") Подробнее
+                    .services__item
+                        .services__item-inner
+                            .services__ico
+                                img(src="img/ic-photo-content.svg" alt="Фото и контент для социальных сетей")
+                            p.services__text Фото и контент для социальных сетей
+                            a.services__link.linked.linked-arrow.linked-grey(href="#" title="Фото и контент для социальных сетей") Подробнее
+                span.services__curve.services__curve-1
+                span.services__curve.services__curve-2
+                span.services__curve.services__curve-3
+                span.services__curve.services__curve-4.services__curve--big
+                span.services__curve.services__curve-5.services__curve--big
+                span.services__curve.services__curve-6.services__curve--big
+    section.section
+        .container
+            .action__area#hire
+                h1.h1.bold.center Комплексный маркетинг
+                .action__area-info.container--limited-ultra
+                    p.action__area-desc Мы сделаем всё как нужно: повысим продажи и предоставим отчетность.
+                    span.action__area-price Цена: 25 000 грн/месяц
+                    a.action__area-order.button.button-light Заказать
+                    span.action__area-back-top.back-top.hidden-xs
+    .video__box
+        .video__inner
+            .container
+                .video__content
+                    .video__title Новинки
+                    .video__text Разработка воронок продаж <br> в мессенджерах
+                    .video__button-play
+                        span.triangle
+                        span.pulse
+                    a.video__button.button.button-dark Заказать
+                    p или <br>
+                    a.linked-reset.underline(href="https://telegram.me/XusuBot") поговорить с чат ботом
+
+    .container
+        .row.better__box
+            .better__title.col-sm-5.col-md-5
+                p Чем мы лучше агенств и работников в штате
+            ul.better__list.col-sm-7.col-md-7
+                li.better__item Мы сократили все лишние расходы, чтобы предложить вам лучшую цену! У нас нет офиса, администраторов, секретарш и продажников.
+                li.better__item Вы получите свой отдел маркетинга по цене одного сотрудника в штате.
+                li.better__item Открытость – наша фишка. Мы профессионалы своего дела и нам нечего скрывать. Вы можете познакомиться с нами, соцсети открыты.
+            .col-md-12
+                a.better__list-back-top.back-top.hidden-sm.hidden-md.hidden-lg
+
+    section.section
+        h2.h1.bold.center Наши клиенты
+        .clients__box
+            .clients__slider#clientsSlider
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap
+                            img.clients__img(src="/img/clients/01.png" alt="Hakuna Matata")
+                        .clients__title Hakuna Matata
+                        .clients__desc Авторские туры по Миру
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap.hotto
+                            img.clients__img(src="/img/clients/02.png" alt="Hotto")
+                        .clients__title Hotto
+                        .clients__desc Интернет-магазин окон и климатической техники
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap.w130
+                            img.clients__img(src="/img/clients/03.png" alt="Аvtogorod39")
+                        .clients__title Аvtogorod39
+                        .clients__desc Интернет-магазин автозапчастей
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap.ice-viking
+                            img.clients__img(src="/img/clients/04.png" alt="Icevikings")
+                        .clients__title Icevikings
+                        .clients__desc Авторские туры в Исландию
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap.w100
+                            img.clients__img(src="/img/clients/05.png" alt="Bronx colors")
+                        .clients__title Bronx colors
+                        .clients__desc Cosmetics makeup
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap.iglot
+                            img.clients__img(src="/img/clients/06.png" alt="Inglot")
+                        .clients__title Inglot
+                        .clients__desc Сеть магазинов косметики и парфюмерии
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap.flow
+                            img.clients__img(src="/img/clients/07.png" alt="FLOW")
+                        .clients__title FLOW
+                        .clients__desc Магазин одежды
+
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap.w80
+                            img.clients__img(src="/img/clients/08.png" alt="America Store")
+                        .clients__title America Store
+                        .clients__desc Интернет-магазин одежды
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap.w80
+                            img.clients__img(src="/img/clients/09.png" alt="One Black Coffee, Please")
+                        .clients__title One Black Coffee, Please
+                        .clients__desc Кофейня
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap.vash-doctor
+                            img.clients__img(src="/img/clients/010.png" alt="Ваш Доктор")
+                        .clients__title Ваш Доктор
+                        .clients__desc Лечебно-консультационный центр
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap.w80
+                            img.clients__img(src="/img/clients/011.png" alt="Eboreshki")
+                        .clients__title Eboreshki
+                        .clients__desc Пекарня
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap.w80
+                            img.clients__img(src="/img/clients/012.png" alt="Votoot")
+                        .clients__title Votoot
+                        .clients__desc Мобильное приложение
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap.w100
+                            img.clients__img(src="/img/clients/013.png" alt="Фламенко-тур")
+                        .clients__title Фламенко-тур
+                        .clients__desc Туристическое агентство
+                .clients__item
+                    .clients__inner
+                        .clients__img-wrap.w130
+                            img.clients__img(src="/img/clients/014.png" alt="Media Hack Weekend")
+                        .clients__title Media Hack Weekend
+                        .clients__desc Крупнейший хакатон в Украине
+    .contact__block#contacts
+        .container
+            .contact__inner
+                .contact__phones
+                    .contact__ready-text Мы готовы как к работе онлайн, так и к личной встрече в Днепре и в Киеве
+                    ul.contact__phones-list
+                        li.contact__item
+                            .contact__city Днепр
+                            .contact__people
+                                .contact__name Влад
+                                a.contact__phone.link.icon-call(href="tel:0663492552") +38 066 349 25 52
+                        li.contact__item
+                            .contact__city Киев
+                            .contact__people
+                                .contact__name Денис
+                                a.contact__phone.link.icon-call(href="tel:0663492552") +38 066 349 25 52
+
+                .contact__area
+                    form.contact__form#mainForm(autocomplete="off")
+                        .thanks__box
+                            .thanks__title Спасибо
+                            .thanks__text мы вам перезвоним
+                        input(type="hidden" name="main")
+                        input(type="hidden" name="page_index")
+                        .contact__form-fields
+                            .contact__form-textgroup.required
+                                input.contact__form-input(type="text" name="name" placeholder="Имя")
+                            .contact__form-textgroup.required
+                                input.contact__form-input(type="tel" name="phone" placeholder="+ 38 (__) ___  __  __")
+                            .contact__form-textgroup
+                                input.contact__form-input(type="email" name="email" placeholder="@-mail")
+                        .contact__form-package
+                            .contact__form-checkgroup.w100
+                                input.contact__form-switcher(id="all_inclusive" type="checkbox" name="all_inclusive")
+                                label.contact__form-checkbox(for="all_inclusive")
+                                    span.box
+                                    span.type Комплексный маркетинг, нанять всю команду
+                            .contact__form-checkgroup.w50
+                                input.contact__form-switcher(id="context_ads" type="checkbox" name="context_ads")
+                                label.contact__form-checkbox(for="context_ads")
+                                    span.box
+                                    span.type Контекстная реклама
+                            .contact__form-checkgroup.w50
+                                input.contact__form-switcher(id="social_content" type="checkbox" name="social_content")
+                                label.contact__form-checkbox(for="social_content")
+                                    span.box
+                                    span.type Контент для соц.сетей
+                            .contact__form-checkgroup.w50
+                                input.contact__form-switcher(id="target_ads" disabled="disabled" type="checkbox" name="target_ads")
+                                label.contact__form-checkbox(for="target_ads")
+                                    span.box
+                                    span.type Таргетинговая реклама
+                            .contact__form-checkgroup.w50
+                                input.contact__form-switcher(id="chat_bot" type="checkbox" name="chat_bot")
+                                label.contact__form-checkbox(for="chat_bot")
+                                    span.box
+                                    span.type Разработка чат-бота
+                        .contact__form-textarea-wrap
+                            textarea.contact__form-textarea#textArea(type="text" maxlength="70" name="comment")
+                            span.text-placeholder Адрес вашего сайта <br> и другие комментарии вопросы
+                            span.count
+                        button.button.button-filled.contact__form-submit.formSubmit(type="submit") Отправить

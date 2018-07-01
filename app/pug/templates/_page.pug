@@ -20,42 +20,61 @@ html
             link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
             link(rel="stylesheet" href="css/style.css")
 
-    body.body__loader(class=bodyClass)
+    body#top.body__loader(class=bodyClass)
         block header
             header.header__main
                 .container
                     .header__inner
                         .header__logo
-                            a.link.header__logo-wrap(href="Люди digital")
+                            a.link.header__logo-wrap(title="Люди digital")
                                 img.header__logo-img(src="img/logo.png" alt="Люди digital")
-                        nav.header__menu
-                            ul.header__list
-                                li.header__item
-                                    a.link.header__link О нас
-                                li.header__item
-                                    a.link.header__link Услуги
-                                    ul.header__list_sub
-                                        li.header__item_sub
-                                            a.link.header__link_sub Контекстная реклама
-                                        li.header__item_sub
-                                            a.link.header__link_sub Таргетинговая реклама
-                                li.header__item
-                                    a.link.header__link Нанять
-                                li.header__item
-                                    a.link.header__link Контакты
-                        ul.header__contact-list
-                            li.header__contact-item
-                                a.link.header__contact-link.icon-call(href="tel:+380663492552") +38 (066) 349 25 52
-
+                        .header__nav
+                            nav.header__menu
+                                ul.header__list
+                                    li.header__item
+                                        a.link.header__link(href="#about") О нас
+                                    li.header__item
+                                        a.link.header__link(href="#services") Услуги
+                                        ul.header__list_sub
+                                            li.header__item_sub
+                                                a.link.header__link_sub(href="#services") Контекстная реклама
+                                            li.header__item_sub
+                                                a.link.header__link_sub(href="#services") Таргетинговая реклама
+                                    li.header__item
+                                        a.link.header__link(href="#hire") Нанять
+                                    li.header__item
+                                        a.link.header__link(href="#contacts") Контакты
+                            ul.header__contact-list
+                                li.header__contact-item
+                                    a.link.header__contact-link.icon-call(href="tel:+380663492552") +38 (066) 349 25 52
+                        #btnMobile.hidden-md.hidden-lg
+                            .burger
+                                i
 
 
         .main-content(class=mainClass)
             block content
 
             block footer
-                footer.footer
+                footer.footer__box
+                    .container
+                        .footer__inner
+                            .footer__left
+                                a.link.footer__email(href="mailto:vlad@gmail.com") vlad@gmail.com
+                                ul.footer__social-list
+                                    li.footer__social-item
+                                        a.footer__social-link.telegram(href="#")
+                                    li.footer__social-item
+                                        a.footer__social-link.facebook(href="#")
+                                    li.footer__social-item
+                                        a.footer__social-link.instagram(href="#")
+                            .footer__right
+                                p.footer__copyright
+                                    span.copyright &copy;
+                                    span.year 2018
 
 
                 block scripts
                     script(src="js/jquery.min.js" type="text/javascript")
+                    script(src="js/owl.carousel.js" type="text/javascript")
                     script(src="js/bundle.js" type="text/javascript")
