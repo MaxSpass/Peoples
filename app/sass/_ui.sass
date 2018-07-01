@@ -94,17 +94,30 @@
 
 
 .back-top
+  position: fixed
   display: block
   cursor: pointer
   width: 62px
   height: 62px
-  background: url(../img/used/btn-up-static.svg) center center no-repeat
+  background: no-repeat
+  background-position: center center
+  background-image: url(../img/used/btn-up-static.svg)
   background-size: contain
   border-radius: 50%
   transition: all .3s ease
-  opacity: 1
+  opacity: .5
+  right: 5%
+  bottom: 5%
+  user-select: none
+  z-index: 99
+  &.not-visible
+    opacity: 0
   &:hover
-    opacity: .5
+    opacity: 1
+  @include b(tablet)
+    width: 42px
+    height: 42px
+    bottom: 3%
 
 
 $pulseColor: #fcfcfc

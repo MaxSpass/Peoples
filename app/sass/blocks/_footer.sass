@@ -4,7 +4,7 @@
 .footer__inner
   display: flex
   align-items: center
-  padding: 10px 0
+  padding: 15px 0 10px 0
   margin-right: 25px
 
 
@@ -22,7 +22,8 @@
   color: #94939c
 
 .footer__social-list
-
+  display: flex
+  align-items: center
 
 .footer__social-item
   display: inline-block
@@ -36,13 +37,15 @@
   background-repeat: no-repeat
   background-size: contain
   display: block
+  transition: all .3s ease
   &.instagram
     background-image: url(../img/icons/instagram_light.svg)
   &.facebook
     background-image: url(../img/icons/facebook_light.svg)
   &.telegram
     background-image: url(../img/icons/telegram_light.svg)
-
+  &:hover
+    opacity: .7
 
 .footer__right
 
@@ -59,3 +62,25 @@
     font-size: 14px
     opacity: .5
 
+@include b(xs)
+  .footer__inner
+    padding: 25px 0 15px 0
+    flex-direction: column
+  .footer__box
+    position: relative
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      width: 100%
+      height: 40%
+      background: #fff
+  .footer__right
+    margin-top: 30px
+    margin-right: auto
+  .footer__copyright
+    position: relative
+    color: $textColor
+    z-index: 2

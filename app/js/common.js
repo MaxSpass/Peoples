@@ -215,6 +215,18 @@ const smoothScrollToAnchor = () => {
     });
 }
 
+const checkWinOffset = () => {
+    const winOffset = window.pageYOffset
+    const $backToTopButton = $('.back-top');
+    if(winOffset > 100) {
+        $backToTopButton.removeClass('not-visible')
+        // not-visible
+    } else {
+        $backToTopButton.addClass('not-visible')
+    }
+}
+
+
 $doc.on('ready', () => {
     checkViewport();
     checkEmptyFields();
@@ -226,8 +238,12 @@ $doc.on('ready', () => {
     checkSubMenus();
     mainFormHandler();
     smoothScrollToAnchor();
+    checkWinOffset();
 });
 
+$win.on('scroll', ()=>{
+    checkWinOffset();
+})
 
 $win.on('resize', () => {
     checkViewport();
