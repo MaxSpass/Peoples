@@ -183,27 +183,36 @@ const checkSubMenus = () => {
     })
 }
 
-const formHandler = () => {
-    const $submitButton = $('button[type="submit"]');
-    const $form = $submitButton.closest('form');
-    $submitButton.click(function(e){
-        e.preventDefault();
-        // console.log('this',$submitButton)
-        // if($form[0].checkValidity()) {
-        //     $.ajax({
-        //         type: 'post',
-        //         url: '/',
-        //         data: $form.serializeArray(),
-        //         success: (res) => {
-        //             $form.addClass('isSend')
-        //             setTimeout(() => {
-        //                 $form.removeClass('isSend')
-        //             }, 3000)
-        //         }
-        //     })
-        // }
+function formHandler() {
+    var $submitButton = $('.formSubmit');
+    $submitButton.click(function (e) {
+        var $form = $(e.currentTarget).closest('form');
+        if ($form[0].checkValidity()) {
+            var data = $form.serializeArray();
+            $.ajax({
+                type: 'post',
+                url: '../handler.php',
+                data: data,
+                success: function success(res) {
+                    $form.find('.contact__form-input').val('')
+                    if($form.find('.contact__form-textarea').length) $form.find('.contact__form-textarea').val('');
+                    if ($form.hasClass('invoke__form')) {
+                        alert('Запрос принят, спасибо!');
+                    } else {
+                        $form.addClass('isSend');
+                        setTimeout(function () {
+                            $form.removeClass('isSend');
+                        }, 3000);
+                    }
+                },
+                error: function () {
+                    alert('Произошла ошибка, попробуйте пожалуйста позже!')
+                }
+            });
+            return false;
+        }
     });
-}
+};
 
 const scrollToAnchor = (anchor) => {
     const $el = $(anchor);

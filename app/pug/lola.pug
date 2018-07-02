@@ -40,14 +40,14 @@ block content
                     .invoke__text-title Уже есть аккаунт Adwords, но результаты так себе?
                     .invoke__text-desc Оставьте заявку на бесплатный аудит аккаунта и я скажу, что вы делали не так.
                 .invoke__form-wrap
-                    form.invoke__form#invokeForm
-                        input(type="hidden" name="adwords_request")
-                        input(type="hidden" name="page_lola")
+                    form.invoke__form#invokeForm(autocomplete="off")
+                        input(type="hidden" name="form" value="Аудит аккаунта")
+                        input(type="hidden" name="page" value="Страница - Лола")
                         .contact__form-textgroup.invoke__form-textgroup
                             input.contact__form-input.invoke__form-input.inputMask(required type="tel" name="phone" placeholder="Номер телефона")
                         .contact__form-textgroup.invoke__form-textgroup
-                            input.contact__form-input.invoke__form-input(required type="url" name="url" placeholder="Ссылка на сайт вашего бизнеса")
-                        button.invoke__form-submit.button.button-dark.video__button(form="invokeForm" type="submit") Отправить
+                            input.contact__form-input.invoke__form-input(required type="text" name="url" placeholder="Ссылка на сайт вашего бизнеса")
+                        button.invoke__form-submit.button.button-dark.video__button.formSubmit(form="invokeForm") Отправить
 
     .strategy__box
         .container
@@ -74,18 +74,18 @@ block content
                         .thanks__box
                             .thanks__title Спасибо
                             .thanks__text мы вам перезвоним
-                        input(type="hidden" name="main")
-                        input(type="hidden" name="page_lola")
+                        input(type="hidden" name="form" value="Форма - основная")
+                        input(type="hidden" name="page" value="Страница - Лола")
                         .contact__form-fields
                             .contact__form-textgroup.required
-                                input.contact__form-input(required type="text" name="name" placeholder="Имя")
+                                input.contact__form-input(required type="text" name="name" placeholder="Имя" pattern="^[A-Za-z\sA-Яа-яЁё\s]+$")
                             .contact__form-textgroup.required
                                 input.contact__form-input.inputMask(required type="tel" name="phone" placeholder="+ 38 (__) ___  __  __")
                             .contact__form-textgroup
-                                input.contact__form-input(type="email" name="email" placeholder="@-mail")
+                                input.contact__form-input(type="email" name="email" placeholder="@-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")
                         .contact__form-package
                             .contact__form-checkgroup.w100
-                                input.contact__form-switcher(id="social_content" checked="checked" type="checkbox" name="social_content")
+                                input.contact__form-switcher(id="social_content" checked="checked" type="checkbox" name="social_content" value="Контент для соц.сетей")
                                 label.contact__form-checkbox(for="social_content")
                                     span.box
                                     span.type Контент для соц.сетей
@@ -93,4 +93,4 @@ block content
                             textarea.contact__form-textarea#textArea(type="text" maxlength="200" name="comment")
                             span.text-placeholder Адрес вашего сайта <br> и другие комментарии вопросы
                             span.count
-                        button.button.button-filled.contact__form-submit.formSubmit(type="submit") Отправить
+                        button.button.button-filled.contact__form-submit.formSubmit Отправить

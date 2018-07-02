@@ -180,11 +180,14 @@ gulp.task('build',['clean', 'imagemin', 'sass'], function(){
 
 
     var buildJs = gulp.src('app/js/**/*')
-        .pipe(jsMinify())
+        // .pipe(jsMinify())
         .pipe(gulp.dest('dist/js'));
 
 
     var buildHtml = gulp.src('app/*.html')
+        .pipe(gulp.dest('dist'));
+
+    var buildPhp = gulp.src('app/*.php')
         .pipe(gulp.dest('dist'));
 
     var buildJs = gulp.src('app/libs/**/*')
