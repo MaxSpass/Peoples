@@ -257,11 +257,23 @@ const checkAnchorFromStorage = () => {
 }
 
 
-const inputMaskInit = () => {
-    $(".inputMask").inputmask({
-        "mask": "+38(099)999-99-99",
-        "clearIncomplete": true
-    });
+const loadYouTubeVideo = () => {
+    // Load the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/AIzaSyD1ZLVv6nAe39BX-y4XMIWLkOyy_Cs7VoI";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // Replace the 'ytplayer' element with an <iframe> and
+    // YouTube player after the API code downloads.
+    var player;
+    function onYouTubePlayerAPIReady() {
+        player = new YT.Player('ytplayer', {
+            height: '360',
+            width: '640',
+            videoId: 'gsVt6-PgdNc'
+        });
+    }
 }
 
 $doc.on('ready', () => {
@@ -277,7 +289,7 @@ $doc.on('ready', () => {
     smoothScrollToAnchor();
     checkWinOffset();
     checkAnchorFromStorage();
-    inputMaskInit();
+    // loadYouTubeVideo();
 });
 
 $win.on('scroll', ()=>{
