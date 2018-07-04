@@ -533,10 +533,11 @@ $navButtonsOffset: 80px
       width: 100%
       display: table
   &:hover .contact__form-switcher:not(:checked):not([disabled]):not(.disabled) + label
-    .box
-      border-color: $orange
-    .type
-      color: $orange
+    @include b(desktop)
+      .box
+        border-color: $orange
+      .type
+        color: $orange
 
 .contact__form-switcher
   display: none
