@@ -18,7 +18,7 @@
         @media screen and (min-width: 1200px) { @content ; }
     }
     @else if $point == xxl {
-        @media screen and (min-width: 1750px) { @content ; }
+        @media screen and (min-width: 1500px) { @content ; }
     }
     @else if $point == tablet {
         @media screen and (max-width: 991px) { @content ; }

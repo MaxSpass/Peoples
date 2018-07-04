@@ -12,7 +12,7 @@
 
 .digital__inner
   //background-image: url('../img/svg/curve_mini.svg')
-  margin-top: 45px
+  margin-top: 60px
   background-position: center center
   background-repeat: no-repeat
   background-size: contain
@@ -213,8 +213,28 @@
   font-size: 24px
 
 .grey__box
+  display: flex
+  align-items: center
   height: 48px
   background-color: rgba(178, 168, 240, 0.23)
+  @include b(sm)
+    visibility: hidden
+    background: transparent
+
+.grey__box-links
+  .owl-item
+    display: flex
+    align-items: center
+  a
+    display: inline-block
+    &:not(:last-child)
+      margin-right: 20px
+  &.noSlider
+    display: flex
+    align-items: center
+    &>li
+      margin-right: 20px
+
 
 .page
   .contact__area

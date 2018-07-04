@@ -56,7 +56,15 @@ block content
                 .strategy__text
                     .strategy__desc <b>Основа моей стратегии в работе</b> <br> — относись к бизнесу клиента как к своему. Поэтому делаю больше, чем просто рекламу, чтобы увеличить эффективность инвестиций. Обращайтесь, будем вместе работать над улучшением показателей вашего сайта.
 
-    .grey__box
+    .grey__box.hidden-xs
+        .container
+            .row
+                .col-xs-12.col-md-5
+                    ul.grey__box-links
+                        li
+                            a.grey__box-links.linked(href="./kontekstnaya-reklama") Контекстная реклама
+                        li
+                            a.grey__box-links.linked(href="./smm-reklama") Таргетинговая реклама
 
     .contact__block#contacts
         .container
@@ -80,15 +88,15 @@ block content
                             .contact__form-textgroup.required
                                 input.contact__form-input(required type="text" name="name" placeholder="Имя" pattern="^[A-Za-z\sA-Яа-яЁё\s]+$")
                             .contact__form-textgroup.required
-                                input.contact__form-input.inputMask(required type="tel" name="phone" placeholder="+ 38 (__) ___  __  __")
+                                input.contact__form-input.inputMask(required type="tel" name="phone" placeholder="Номер телефона")
                             .contact__form-textgroup
                                 input.contact__form-input(type="email" name="email" placeholder="@-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")
                         .contact__form-package
                             .contact__form-checkgroup.w100
-                                input.contact__form-switcher(id="social_content" checked="checked" type="checkbox" name="social_content" value="Контент для соц.сетей")
+                                input.contact__form-switcher(id="social_content" checked="checked" type="checkbox" name="social_content" value="Контент для соцсетей")
                                 label.contact__form-checkbox(for="social_content")
                                     span.box
-                                    span.type Контент для соц.сетей
+                                    span.type Контент для соцсетей
                         .contact__form-textarea-wrap
                             textarea.contact__form-textarea#textArea(type="text" maxlength="200" name="comment")
                             span.text-placeholder Адрес вашего сайта <br> и другие комментарии вопросы

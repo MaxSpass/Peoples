@@ -14,7 +14,7 @@ class post_contact
     function send_contact_form($post_data)
     {
 
-        $main_email = 'maxspas1@gmail.com';
+        $main_email = 'info@ludi.digital';
 //        $boss_email = 'test@gmail.com';
 
 

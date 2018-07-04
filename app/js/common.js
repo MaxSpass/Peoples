@@ -170,7 +170,7 @@ const initServicesCarousel = () => {
                     items: 3
                 }
             }
-        })
+        });
         servicesSliderInited = true;
     }
 }
@@ -246,15 +246,15 @@ const checkWinOffset = () => {
 
 
 const checkAnchorFromStorage = () => {
-    const storageAnchor = localStorage.getItem('anchor')
+    const storageAnchor = localStorage.getItem('anchor');
 
     if(storageAnchor) {
-        localStorage.removeItem('anchor')
+        localStorage.removeItem('anchor');
         setTimeout(()=>{
             scrollToAnchor(storageAnchor)
         },500)
     }
-}
+};
 
 
 const loadYouTubeVideo = () => {
@@ -274,7 +274,81 @@ const loadYouTubeVideo = () => {
             videoId: 'gsVt6-PgdNc'
         });
     }
-}
+};
+
+const recheckInputs = (e, isSingle) => {
+    const $form = $('#mainForm');
+    const delegate = $(e.delegateTarget.control);
+    const recheck = $(e.currentTarget).data('recheck');
+    const $inputs = $form.find('.contact__form-switcher');
+    const checkedLength = $form.find('input:checkbox:checked').length;
+
+      if(isSingle) {
+          $inputs.each((i,el) => {
+              const $el = $(el);
+              ($el.attr('name') != recheck) ? $el.prop('checked', false) :  $el.prop('checked', true);
+          })
+      } else if(!isSingle && checkedLength != 1 && delegate.is(':checked')) {
+          delegate.prop('checked', false);
+      } else {
+          delegate.prop('checked', true);
+      }
+};
+
+const checkboxController = () => {
+    $('.contact__form-checkbox').on('click', (e)=>{
+        e.preventDefault();
+        recheckInputs(e)
+    });
+};
+
+$('[data-recheck]').on('click',(e)=>{
+    recheckInputs(e, true)
+});
+
+const checkCurveAnimate = () => {
+    const $serviceBox = $('.services__box');
+    if($serviceBox.length) {
+        const winOffset = window.pageYOffset;
+        const serviceOffset = $serviceBox.offset().top;
+        const serviceHeight = $serviceBox.height();
+        const koef = 1.4;
+
+        if(winOffset * koef > serviceOffset && winOffset * koef < serviceOffset + serviceHeight) {
+            $('.services__curve').removeClass('curve-animate')
+        }
+    } else {
+        return false;
+    }
+};
+
+const initLinksCarousel = () => {
+
+    const $boxLinks = $('.grey__box-links');
+
+    if($boxLinks.children().length > 2) {
+        $('.grey__box-links').addClass('owl-carousel').owlCarousel({
+            // nav: true,
+            // autoplay: false,
+            // loop: true,
+            margin: 10,
+            autoplayHoverPause: true,
+            autoplaySpeed: 2000,
+            navSpeed: 2000,
+            dragEndSpeed: 2000,
+            responsive:{
+                0:{
+                    items: 1
+                },
+                480:{
+                    items: 2
+                },
+            }
+        })
+    } else {
+        $boxLinks.addClass('noSlider');
+    }
+};
 
 $doc.on('ready', () => {
     checkViewport();
@@ -283,18 +357,25 @@ $doc.on('ready', () => {
     setBgByImg();
     initClientsCarousel();
     initServicesCarousel();
+    initLinksCarousel();
     checkTextareaLength();
     checkSubMenus();
     formHandler();
     smoothScrollToAnchor();
     checkWinOffset();
     checkAnchorFromStorage();
-    // loadYouTubeVideo();
+    checkboxController();
+    checkCurveAnimate();
+
 });
+
+
+
 
 $win.on('scroll', ()=>{
     checkWinOffset();
-})
+    checkCurveAnimate();
+});
 
 $win.on('resize', () => {
     checkViewport();

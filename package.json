@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap-3-grid": "0.0.1",
     "font-awesome": "^4.7.0",
     "jquery": "^1.9.1",
     "jquery.dotdotdot": "^3.2.2",

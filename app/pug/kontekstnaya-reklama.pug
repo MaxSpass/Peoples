@@ -18,17 +18,17 @@ block content
     section.digital__box
         .container
             .digital__inner.thin
-                .digital__exp.denis
+                .digital__exp.vlad
                     .digital__column.digital__exp-left
-                        h1.digital__name Денис
-                        h2.digital__special Таргетинговая реклама
+                        h1.digital__name Влад
+                        h2.digital__special Контекстная реклама
                         .digital__person-info
                             p.digital__desc Маркетолог со стажем 5 лет. Сертифицированный партнер Google Adwords. За эти годы рекламировал разные проекты:
                             ul.digital__list
                                 li.digital__item От продаж Сельхозтехники до Лекарственных препаратов
                                 li.digital__item От Риэлторских услуг до Программ для похудения
                                 li.digital__item От интернет-магазинов до мелких лендингов
-                        a.digital__link.digital__link-social.facebook.linked(href="https://www.facebook.com/volosovd") Готов обсудить ваш проект
+                        a.digital__link.digital__link-social.telegram.linked(href="https://t.me/Bezginov") Готов обсудить ваш проект
                 .digital__column.digital__text
                     p Маркетинг любит профессионалов. Если раньше вашу рекламу вел, знакомый , сосед  или племянник, я гарантирую рост продаж на 30% уже через 2 месяца
                     a.digital__order.button.linked(href="#contacts") Заказать
@@ -42,7 +42,7 @@ block content
                 .invoke__form-wrap
                     form.invoke__form#invokeForm(autocomplete="off")
                         input(type="hidden" name="form" value="Аудит аккаунта")
-                        input(type="hidden" name="page" value="Страница - Денис")
+                        input(type="hidden" name="page" value="Страница - Влад")
                         .contact__form-textgroup.invoke__form-textgroup
                             input.contact__form-input.invoke__form-input.inputMask(required type="tel" name="phone" placeholder="Номер телефона")
                         .contact__form-textgroup.invoke__form-textgroup
@@ -56,7 +56,15 @@ block content
                 .strategy__text
                     .strategy__desc <b>Основа моей стратегии в работе</b> <br> — относись к бизнесу клиента как к своему. Поэтому делаю больше, чем просто рекламу, чтобы увеличить эффективность инвестиций. Обращайтесь, будем вместе работать над улучшением показателей вашего сайта.
 
-    .grey__box
+    .grey__box.hidden-xs
+        .container
+            .row
+                .col-xs-12.col-md-5
+                    ul.grey__box-links
+                        li
+                            a.grey__box-links.linked(href="./smm-reklama") Таргетинговая реклама
+                        li
+                            a.grey__box-links.linked(href="./smm-content") Контент для соцсетей
 
     .contact__block#contacts
         .container
@@ -68,19 +76,19 @@ block content
                         li.contact__item
                             .contact__people
                                 a.contact__phone.link.icon-call(href="tel:0663492552") +38 066 349 25 52
-                    a.contact__phones-social.digital__link-social.facebook.linked(href="https://www.facebook.com/volosovd") Мой facebook
+                    a.contact__phones-social.digital__link-social.telegram.linked(href="https://t.me/Bezginov") Мой telegram
                 .contact__area
                     form.contact__form#mainForm(autocomplete="off")
                         .thanks__box
                             .thanks__title Спасибо
                             .thanks__text мы вам перезвоним
                         input(type="hidden" name="form" value="Форма - основная")
-                        input(type="hidden" name="page" value="Страница - Денис")
+                        input(type="hidden" name="page" value="Страница - Влад")
                         .contact__form-fields
                             .contact__form-textgroup.required
                                 input.contact__form-input(required type="text" name="name" placeholder="Имя" pattern="^[A-Za-z\sA-Яа-яЁё\s]+$")
                             .contact__form-textgroup.required
-                                input.contact__form-input.inputMask(required type="tel" name="phone" placeholder="+ 38 (__) ___  __  __")
+                                input.contact__form-input.inputMask(required type="tel" name="phone" placeholder="Номер телефона")
                             .contact__form-textgroup
                                 input.contact__form-input(type="email" name="email" placeholder="@-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")
                         .contact__form-package

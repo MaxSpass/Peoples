@@ -1,4 +1,5 @@
 .idea
+/dist
 /node_modules
 app/css/**/*.css
 app/*.html

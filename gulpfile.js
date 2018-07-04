@@ -175,6 +175,9 @@ gulp.task('build',['clean', 'imagemin', 'sass'], function(){
     var buildSvg = gulp.src('app/img/**/*.svg')
         .pipe(gulp.dest('dist/img/'));
 
+    var buildFavicon = gulp.src('app/*.ico')
+        .pipe(gulp.dest('dist/'));
+
     var buildFonts = gulp.src('app/fonts/**/*')
         .pipe(gulp.dest('dist/fonts'));
 

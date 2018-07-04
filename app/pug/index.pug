@@ -7,7 +7,7 @@ append vars
 append styles
 
 block content
-    section.section.peoples__section#about
+    section.section.peoples__section
         .container
             .preview-text
                 h1.h1.bold Интернет-маркетинг
@@ -26,10 +26,10 @@ block content
                                 a.people__title(href="https://www.instagram.com/a_wo_takoe")
                                     span.people__name Лола
                                     span.people__social.people__social--instagram
-                                .people__special Фото и контент для соц.сетей
+                                .people__special Фото и контент для соцсетей
                             .people__desc
                                 p Привет! Всё, что касается контента – это про меня. Я работала в агентстве над такими проектами, как Сушия, 0000000 <br>Вела инстаграм-страницы магазина одежды «FLOW», магазинов косметики Inglot.
-                                a.linked.linked-arrow.people__link(href="/lola.html") Подробно
+                                a.linked.linked-arrow.people__link(href="/smm-content") Подробно
                     li.people__item.people__item--denis
                         .people__img-wrap
                             img.people__img(src="/img/main-denis.png")
@@ -41,7 +41,7 @@ block content
                                 .people__special Реклама в Facebook, Instagram
                             .people__desc
                                 p Привет! Я в маркетинге с 2012го. Сооснователь сети Типичный Днепр, работал в холдингах UMH Фото Group и 1+1 медиа над такими проектами, как Комсомольская Правда в Украине, ovva.tv, 1+1video, Media Hack Weekend 2017 и W:here. Продвигал соцсети турагентств, event-агентств
-                                a.linked.linked-arrow.people__link(href="/denis.html") Подробно
+                                a.linked.linked-arrow.people__link(href="/smm-reklama") Подробно
                     li.people__item.people__item--vlad
                         .people__img-wrap
                             img.people__img(src="/img/main-vlad.png")
@@ -53,10 +53,10 @@ block content
                                 .people__special Контекстная реклама в Google и Яндекс
                             .people__desc
                                 p Более 5 лет в сфере интернет рекламы. Сертифицированный партнер Google Adwords. <br>Adwords — хитрый змей, но я покажу как его обуздать и использовать на благо бизнеса.
-                                a.linked.linked-arrow.people__link(href="/vlad.html") Подробно
+                                a.linked.linked-arrow.people__link(href="/kontekstnaya-reklama") Подробно
 
 
-    section.section
+    section.section#about
         .container.container--limited
             .preview-text.preview-text--limit
                 span.h1.thin Любой бизнес &mdash; это люди
@@ -74,25 +74,25 @@ block content
                             .services__ico
                                 img(src="img/svg/ic-context-adv.svg" alt="Контекстная реклама в Google и Яндекс")
                             p.services__text Контекстная реклама в Google и Яндекс
-                            a.services__link.linked.linked-arrow.linked-grey(href="/vlad.html" title="Контекстная реклама в Google и Яндекс") Подробнее
+                            a.services__link.linked.linked-arrow.linked-grey(href="/vlad" title="Контекстная реклама в Google и Яндекс") Подробнее
                     .services__item
                         .services__item-inner
                             .services__ico
                                 img(src="img/svg/ic-target-adv.svg" alt="Таргетинговая реклама Facebook и Instagram.")
                             p.services__text Таргетинговая реклама Facebook и Instagram.
-                            a.services__link.linked.linked-arrow.linked-grey(href="/lola.html" title="Таргетинговая реклама Facebook и Instagram.") Подробнее
+                            a.services__link.linked.linked-arrow.linked-grey(href="/lola" title="Таргетинговая реклама Facebook и Instagram.") Подробнее
                     .services__item
                         .services__item-inner
                             .services__ico
                                 img(src="img/svg/ic-photo-content.svg" alt="Фото и контент для социальных сетей")
                             p.services__text Фото и контент для социальных сетей
-                            a.services__link.linked.linked-arrow.linked-grey(href="/denis.html" title="Фото и контент для социальных сетей") Подробнее
-                span.services__curve.services__curve-1
-                span.services__curve.services__curve-2
-                span.services__curve.services__curve-3
-                span.services__curve.services__curve-4.services__curve--big
-                span.services__curve.services__curve-5.services__curve--big
-                span.services__curve.services__curve-6.services__curve--big
+                            a.services__link.linked.linked-arrow.linked-grey(href="/denis" title="Фото и контент для социальных сетей") Подробнее
+                span.services__curve.services__curve-1.curve-animate
+                span.services__curve.services__curve-2.curve-animate
+                span.services__curve.services__curve-3.curve-animate
+                span.services__curve.services__curve-4.services__curve--big.curve-animate
+                span.services__curve.services__curve-5.services__curve--big.curve-animate
+                span.services__curve.services__curve-6.services__curve--big.curve-animate
     section.section
         .container
             .action__area#hire
@@ -100,7 +100,7 @@ block content
                 .action__area-info.container--limited-ultra
                     p.action__area-desc Мы сделаем всё как нужно: повысим продажи и предоставим отчетность.
                     span.action__area-price Цена: 25 000 грн/месяц
-                    a.action__area-order.button.button-light(href="#contacts") Заказать
+                    a.action__area-order.button.button-light(href="#contacts" data-recheck="all_inclusive") Заказать
     .video__box
         .video__inner
             .container
@@ -110,7 +110,7 @@ block content
                     .video__button-play
                         span.triangle
                         span.pulse
-                    a.video__button.button.button-dark(href="#contacts") Заказать
+                    a.video__button.button.button-dark(href="#contacts" data-recheck="chat_bot") Заказать
                     p или <br>
                     a.linked-reset.underline(href="https://m.me/whoareyouman1") поговорить с чат ботом
 
@@ -240,7 +240,7 @@ block content
                             .contact__form-textgroup.required
                                 input.contact__form-input(required type="text" name="name" placeholder="Имя")
                             .contact__form-textgroup.required
-                                input.contact__form-input.inputMask(required type="tel" name="phone" placeholder="+ 38 (__) ___  __  __")
+                                input.contact__form-input.inputMask(required type="tel" name="phone" placeholder="Номер телефона")
                             .contact__form-textgroup
                                 input.contact__form-input(type="email" name="email" placeholder="@-mail")
                         .contact__form-package
@@ -255,10 +255,10 @@ block content
                                     span.box
                                     span.type Контекстная реклама
                             .contact__form-checkgroup.w50
-                                input.contact__form-switcher(id="social_content" type="checkbox" name="social_content" value="Контент для соц.сетей")
+                                input.contact__form-switcher(id="social_content" type="checkbox" name="social_content" value="Контент для соцсетей")
                                 label.contact__form-checkbox(for="social_content")
                                     span.box
-                                    span.type Контент для соц.сетей
+                                    span.type Контент для соцсетей
                             .contact__form-checkgroup.w50
                                 input.contact__form-switcher(id="target_ads" type="checkbox" name="target_ads" value="Таргетинговая реклама")
                                 label.contact__form-checkbox(for="target_ads")
@@ -274,5 +274,5 @@ block content
                             span.text-placeholder Адрес вашего сайта <br> и другие комментарии вопросы
                             span.count
                         button.button.button-filled.contact__form-submit.formSubmit Отправить
-    #ytplay
-        iframe(class="youtube-frame" width="560" height="815" src="https://www.youtube.com/embed/gsVt6-PgdNc?&controls=0&showinfo=0&modestbranding=1&autohide=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+    //#ytplay
+    //    iframe(class="youtube-frame" width="560" height="815" src="https://www.youtube.com/embed/gsVt6-PgdNc?&controls=0&showinfo=0&modestbranding=0&autohide=1" frameborder="0" allow="autoplay;" encrypted-media allowfullscreen)

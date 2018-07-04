@@ -1,10 +1,14 @@
 body
   color: #2a2a2a
   font-family: 'Roboto', 'Arial', sans-serif
-  overflow-x: hidden
 
 body,html
+  width: 100%
+  min-width: 100%
+  overflow-x: hidden
   background-color: $bgColor
+  -webkit-text-size-adjust: none
+
 
 a,a:active,a:visited,button,textarea,select
   outline: none
@@ -15,6 +19,7 @@ button,textarea,select
 
 input, a, img
   outline: none !important
+  text-decoration: none
 
 input,textarea
   @include placeholder()
@@ -168,10 +173,10 @@ h5,.h5
 .mt-5
   margin-top: 5px
   
-#ytplayer
+#ytplay
   height: 315px
-  overflow: hidden
   -webkit-backface-visibility: hidden
+  overflow: hidden
   .youtube-frame
     position: relative
     top: -250px
