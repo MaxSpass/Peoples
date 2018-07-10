@@ -1,5 +1,3 @@
-//include ../mixins/bread-crumbs.pug
-
 block vars
     - bodyClass = ""
     - mainClass = ""
@@ -13,12 +11,9 @@ html
         meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
         meta(http-equiv="X-UA-Compatible" content="ie=edge")
         meta(name="format-detection" content="telephone=no")
-        //link(rel="shortcut icon" href="img/favicon.ico" type="image/x-icon")
         title Peoples
         block styles
-            //link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
-            //link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
-            link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&subset=cyrillic")
+            link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic")
             link(rel="stylesheet" href="css/style.css")
 
     body#top.body__loader(class=bodyClass)
