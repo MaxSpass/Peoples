@@ -7,16 +7,27 @@
 
 
 .digital__box
-  margin-bottom: 40px
+  padding-bottom: 40px
+
 
 
 .digital__inner
-  //background-image: url('../img/svg/curve_mini.svg')
+  position: relative
   margin-top: 60px
-  background-position: center center
-  background-repeat: no-repeat
-  background-size: contain
-
+  z-index: 2
+  &:after
+    position: absolute
+    right: 5px
+    top: 108px
+    width: 675px
+    height: 1000px
+    content: ''
+    background-image: url('../img/svg/curve_shade.svg')
+    background-repeat: no-repeat
+    background-size: contain
+    z-index: -1
+    @include b(tablet)
+      display: none
 
 .digital__column
   position: relative
@@ -27,16 +38,17 @@
   box-shadow: 0 2px 4px 0 rgba(178, 168, 240, 0.35)
   flex-basis: 540px
   flex-grow: 1
-  &.digital__text
-    padding: 110px 65px 85px 65px
-    margin-top: 2px
-    margin-left: auto
-    font-size: 20px
-    p
-    .digital__order
-      margin-left: 0
-      margin-top: 35px
-      max-width: 170px
+
+.digital__text
+  padding: 110px 65px 85px 65px
+  margin-top: 2px
+  margin-left: auto
+  font-size: 20px
+  p
+  .digital__order
+    margin-left: 0
+    margin-top: 35px
+    max-width: 170px
 
 .digital__exp
   display: flex
@@ -75,9 +87,9 @@
     content: ''
     display: block
     width: 100%
-    height: 15px
+    height: 13px
     position: absolute
-    bottom: 15px
+    bottom: 17px
     left: 0px
     right: 0px
     background: $orange
@@ -87,6 +99,8 @@
   font-weight: 700
   text-align: center
   margin-bottom: 60px
+  @include b(tablet)
+    margin-bottom: 30px
 
 .digital__person-info
   font-size: 18px
@@ -138,8 +152,9 @@
   height: auto
 
 .invoke__box
+  position: relative
   background: #536173
-
+  z-index: 2
 
 .invoke__inner
   display: flex
@@ -216,19 +231,45 @@
   display: flex
   align-items: center
   height: 48px
-  background-color: rgba(178, 168, 240, 0.23)
-  @include b(sm)
-    visibility: hidden
-    background: transparent
+  background-color: #e8e5fb
 
-.grey__box-links
+.grey__box-links:not(.linked)
+  display: flex
+  justify-content: space-between
+  box-sizing: border-box
+  align-items: center
   .owl-item
     display: flex
     align-items: center
   a
+    position: relative
     display: inline-block
+    color: #fb5b14
+    opacity: .7
+    &:hover
+      text-decoration: underline
     &:not(:last-child)
       margin-right: 20px
+    //&:before
+    //  position: absolute
+    //  content: ''
+    //  display: inline-block
+    //  border: 2.5px solid #fb5b14
+    //  border-bottom: none
+    //  border-left: none
+    //  border-bottom-color: transparent
+    //  border-left-color: transparent
+    //  width: 10px
+    //  height: 10px
+    //  vertical-align: middle
+    //&:before
+    //  transform: rotate(-135deg) translateY(-50%)
+    //  left: -15px
+  //li:nth-child(2) a:before
+  //  top: 50%
+  //  left: auto
+  //  right: -13px
+  //  transform: rotate(45deg) translateY(-50%)
   &.noSlider
     display: flex
     align-items: center
@@ -236,11 +277,14 @@
       margin-right: 20px
 
 
+
 .page
   .contact__area
     border: solid 1px #e2e2e2
     @include b(desktop)
       margin: -150px 0 -20px auto
+    @include b(sm)
+      margin-top: -60px
   //  margin: 0
   //  margin-left: auto
 
@@ -313,3 +357,46 @@
       font-size: 25px
 
 
+@include b(md)
+  .grey__box-links.linked
+    font-size: 15px
+
+@include b(tablet)
+  .digital__box
+    background-position: center 140px
+    background-size: contain
+  .digital__column
+    background: rgba(255, 255, 255, 0.9)
+    padding: 20px
+  .digital__exp:before
+    height: 500px
+  .grey__box
+    z-index: 5
+    position: relative
+    &>.container
+      width: 100%
+  .grey__box-links:not(.linked)
+    margin: 0 auto
+    max-width: 420px
+  //.grey__box-links:not(.linked) a
+  //  line-height: 25px
+
+@include b(xs)
+  .grey__box-links.linked
+    font-size: 14px
+  .grey__box
+    visibility: hidden !important
+    background-color: #fff !important
+    height: 0
+
+@include b(xxs)
+  .grey__box-links:not(.linked)
+    padding: 0
+    flex-direction: column
+  .grey__box-links.linked
+    li:not(:last-child)
+      display: block
+      margin-bottom: 7px
+  .digital__exp:before
+    left: 0
+    right: 0

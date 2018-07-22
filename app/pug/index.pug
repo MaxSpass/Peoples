@@ -107,21 +107,27 @@ block content
                 .video__content
                     .video__title Новинки
                     .video__text Разработка воронок продаж <br> в мессенджерах
-                    .video__button-play
+                    .video__button-play.hidden
                         span.triangle
                         span.pulse
                     a.video__button.button.button-dark(href="#contacts" data-recheck="chat_bot") Заказать
                     p или <br>
                     a.linked-reset.underline(href="https://m.me/whoareyouman1") поговорить с чат ботом
 
-    .container
-        .row.better__box
-            .better__title.col-sm-5.col-md-5
-                p Чем мы лучше агенств и работников в штате
-            ul.better__list.col-sm-7.col-md-7
-                li.better__item Мы сократили все лишние расходы, чтобы предложить вам лучшую цену! У нас нет офиса, администраторов, секретарш и продажников.
-                li.better__item Вы получите свой отдел маркетинга по цене одного сотрудника в штате.
-                li.better__item Открытость – наша фишка. Мы профессионалы своего дела и нам нечего скрывать. Вы можете познакомиться с нами, соцсети открыты.
+    .better__box
+        .container
+            .row
+                .col-sm-5.col-md-5
+                    .better__title
+                        p Чем мы лучше агенств и работников в штате
+                .col-sm-7.col-md-7
+                    ul.better__list
+                        li.better__item
+                            p Мы сократили все лишние расходы, чтобы предложить вам лучшую цену! У нас нет офиса, администраторов, секретарш и продажников.
+                        li.better__item
+                            p Вы получите свой отдел маркетинга по цене одного сотрудника в штате.
+                        li.better__item
+                            p Открытость – наша фишка. Мы профессионалы своего дела и нам нечего скрывать. Вы можете познакомиться с нами, соцсети открыты.
 
     section.section
         h2.h1.bold.center Наши клиенты
@@ -245,7 +251,7 @@ block content
                                 input.contact__form-input(type="email" name="email" placeholder="@-mail")
                         .contact__form-package
                             .contact__form-checkgroup.w100
-                                input.contact__form-switcher(id="all_inclusive" type="checkbox" checked="checked" name="all_inclusive" value="Комплексный маркетинг, нанять всю команду")
+                                input.contact__form-switcher(id="all_inclusive" type="checkbox" name="all_inclusive" value="Комплексный маркетинг, нанять всю команду")
                                 label.contact__form-checkbox(for="all_inclusive")
                                     span.box
                                     span.type Комплексный маркетинг, нанять всю команду
@@ -274,5 +280,11 @@ block content
                             span.text-placeholder Адрес вашего сайта <br> и другие комментарии вопросы
                             span.count
                         button.button.button-filled.contact__form-submit.formSubmit Отправить
-    //#ytplay
-    //    iframe(class="youtube-frame" width="560" height="815" src="https://www.youtube.com/embed/gsVt6-PgdNc?&controls=0&showinfo=0&modestbranding=0&autohide=1" frameborder="0" allow="autoplay;" encrypted-media allowfullscreen)
+    //.popup__box#popup-video
+    //    .popup__inner
+    //        .popup__close &times;
+    //        .popup__container
+    //            #ytplay
+    //                iframe(class="youtube-frame" width="560" height="815" src="https://www.youtube.com/embed/gsVt6-PgdNc?&controls=0&showinfo=0&modestbranding=0&autohide=1" frameborder="0" allow="autoplay;" encrypted-media allowfullscreen)
+    //    .popup__backdrop
+

@@ -6,22 +6,6 @@ let isTablet = false;
 let isDesktop = false
 let servicesSliderInited = false;
 
-// const makeHash = (length) => {
-//     var text = "";
-//     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-//     for (var i = 0; i < length; i++)
-//         text += possible.charAt(Math.floor(Math.random() * possible.length));
-//     return text;
-// };
-
-// (function() {
-//     const cssLink = document.createElement("link");
-//     cssLink.rel = "stylesheet";
-//     cssLink.href = "css/style.css?ver=" + makeHash(20);
-//     document.getElementsByTagName('head')[0].appendChild(cssLink);
-//     initDotDotDot();
-// })();
-
 const checkViewport = () => {
     const winWidth = $win.width();
 
@@ -93,29 +77,6 @@ const checkTextareaLength = () => {
 
         (val) ? $textPlaceholder.hide() : $textPlaceholder.show();
     })
-
-    // $('#textArea').on('keypress, keydown', (e)=>{
-    //     const $this = $(e.currentTarget);
-    //     const maxLength = parseInt($this.attr('maxlength'));
-    //     const currentLength = $this.val().length + 1;
-    //     const $count = $this.siblings('.count');
-    //     const leftChars = maxLength - currentLength;
-    //     const countErrorCls = 'count-error';
-    //
-    //     console.log(maxLength, ' - ', currentLength, ' = ', leftChars);
-    //     console.log('currentLength',currentLength);
-    //
-    //     if(currentLength <= maxLength) {
-    //         $count.text(leftChars);
-    //     }
-    //
-    //     if(leftChars === 0) {
-    //         $count.addClass(countErrorCls)
-    //     } else if($count.hasClass(countErrorCls)) {
-    //         $count.removeClass(countErrorCls)
-    //     }
-    // })
-
 }
 
 const initClientsCarousel = () => {
@@ -159,6 +120,8 @@ const initServicesCarousel = () => {
             autoplaySpeed: 2000,
             navSpeed: 2000,
             dragEndSpeed: 2000,
+            // stagePadding: 250,
+            // autoWidth: true,
             responsive:{
                 0:{
                     items: 1
@@ -185,8 +148,11 @@ const checkSubMenus = () => {
 
 function formHandler() {
     var $submitButton = $('.formSubmit');
+
+
     $submitButton.click(function (e) {
         var $form = $(e.currentTarget).closest('form');
+        var $formId = $form.attr('id');  /*mainForm || invokeForm*/
         if ($form[0].checkValidity()) {
             var data = $form.serializeArray();
             $.ajax({
@@ -194,6 +160,19 @@ function formHandler() {
                 url: '../handler.php',
                 data: data,
                 success: function success(res) {
+
+                    if(window.ga) {
+                        if($formId === 'mainForm') {
+                            ga('send', 'form_send', 'Button');
+                            console.log('send', 'form_send', 'Button');
+                        }
+
+                        if($formId === 'invokeForm') {
+                            ga('send', 'audit', 'Button');
+                            console.log('send', 'audit', 'Button');
+                        }
+                    }
+
                     $form.find('.contact__form-input').val('')
                     if($form.find('.contact__form-textarea').length) $form.find('.contact__form-textarea').val('');
                     if ($form.hasClass('invoke__form')) {
@@ -322,33 +301,53 @@ const checkCurveAnimate = () => {
     }
 };
 
-const initLinksCarousel = () => {
+// const initLinksCarousel = () => {
+//
+//     const $boxLinks = $('.grey__box-links');
+//
+//     if($boxLinks.children().length > 2) {
+//         $('.grey__box-links').addClass('owl-carousel').owlCarousel({
+//             // nav: true,
+//             // autoplay: false,
+//             // loop: true,
+//             margin: 10,
+//             autoplayHoverPause: true,
+//             autoplaySpeed: 2000,
+//             navSpeed: 2000,
+//             dragEndSpeed: 2000,
+//             responsive:{
+//                 0:{
+//                     items: 1
+//                 },
+//                 480:{
+//                     items: 2
+//                 },
+//             }
+//         })
+//     } else {
+//         $boxLinks.addClass('noSlider');
+//     }
+// };
 
-    const $boxLinks = $('.grey__box-links');
+const registerPoupClose = () => {
+    $doc.on('click', '.popup__close, .popup__backdrop', ()=>{
+        $('body').removeClass('popup-show')
+        $('.popup__box--show').removeClass('popup__box--show')
+        setTimeout(()=>{
+            $('.popup-block').removeClass('popup-block');
+        },500)
+    })
+}
 
-    if($boxLinks.children().length > 2) {
-        $('.grey__box-links').addClass('owl-carousel').owlCarousel({
-            // nav: true,
-            // autoplay: false,
-            // loop: true,
-            margin: 10,
-            autoplayHoverPause: true,
-            autoplaySpeed: 2000,
-            navSpeed: 2000,
-            dragEndSpeed: 2000,
-            responsive:{
-                0:{
-                    items: 1
-                },
-                480:{
-                    items: 2
-                },
-            }
-        })
-    } else {
-        $boxLinks.addClass('noSlider');
-    }
-};
+const showPopup = (selector) => {
+    const $el = $(selector);
+    $('body').addClass('popup-show')
+    $el.addClass('popup-block')
+    setTimeout(()=>{
+        $el.addClass('popup__box--show')
+    },100)
+}
+
 
 $doc.on('ready', () => {
     checkViewport();
@@ -357,7 +356,7 @@ $doc.on('ready', () => {
     setBgByImg();
     initClientsCarousel();
     initServicesCarousel();
-    initLinksCarousel();
+    // initLinksCarousel();
     checkTextareaLength();
     checkSubMenus();
     formHandler();
@@ -366,6 +365,11 @@ $doc.on('ready', () => {
     checkAnchorFromStorage();
     checkboxController();
     checkCurveAnimate();
+    registerPoupClose();
+
+    $('.video__button-play').on('click', ()=>{
+        showPopup('#popup-video');
+    })
 
 });
 
