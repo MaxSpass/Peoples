@@ -1,6 +1,7 @@
 .idea
 /dist
 /node_modules
+/backup
 app/css/**/*.css
 app/*.html
 app/js/bundle.js

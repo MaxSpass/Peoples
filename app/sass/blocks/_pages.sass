@@ -63,12 +63,25 @@
     background-size: contain
     background-repeat: no-repeat
     background-position: center center
-  &.lola:before
-    background-image: url('../img/lola.png')
+  &.dasha:before
+    background-image: url('../img/dasha.png')
+    width: 310px
+    height: 460px
+    right: 93px
+    @include b(tablet)
+      width: 270px
+      height: 400px
+      right: -40px
+    @include b(xs)
+      width: 100%
+      left: auto
+      right: auto
   &.denis:before
     background-image: url('../img/denis.png')
   &.vlad:before
     background-image: url('../img/vlad.png')
+  &.identity:before
+    background-image: url('../img/katya.png')
 
 
 .digital__exp-left
@@ -141,6 +154,9 @@
     &.telegram
       &:after
         background-image: url('../img/svg/telegram.svg')
+    &.behance
+      &:after
+        background-image: url('../img/svg/behance.svg')
 
 
 
@@ -211,7 +227,7 @@
 .strategy__ico
 
 .strategy__text
-  max-width: 590px
+  //max-width: 590px
   position: relative
   padding-left: 150px
   &:before

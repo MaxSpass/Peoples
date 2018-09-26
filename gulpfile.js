@@ -150,9 +150,9 @@ gulp.task('sass-build', function() {
 });
 
 gulp.task('watch', ['sass', 'babel', 'gulp-pug', 'browser-sync'], function() {
+    // gulp.watch('app/pug/**/*.pug', ['gulp-pug']);
     gulp.watch('app/pug/**/*.sass', ['sass']);
     gulp.watch('app/sass/**/*.+(sass|scss)', ['sass']);
-    gulp.watch('app/pug/**/*.pug', ['gulp-pug']);
     gulp.watch('app/index.html').on('change', browserSync.reload);
     gulp.watch('app/js/**/*.js').on('change', browserSync.reload);
     gulp.watch('app/js/common.js', ['babel']);

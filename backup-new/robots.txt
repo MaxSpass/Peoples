@@ -1,0 +1,4 @@
+User-agent: *
+
+Host: https://ludi.digital/
+Sitemap: https://ludi.digital/sitemap.xml

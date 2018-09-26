@@ -1,6 +1,8 @@
 const $doc = $(document);
 const $win = $(window);
 const isSlider = $('#servicesSlider').length;
+const briefFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdBpbw6Y5C5A4kiYpaGJp1cUIxHCWz_kGXJNSyGoMxrL0G0iQ/viewform';
+
 let isMobile = false;
 let isTablet = false;
 let isDesktop = false
@@ -65,7 +67,7 @@ const checkEmptyFields = () => {
 const checkTextareaLength = () => {
     const mainFormTextarea = $('#textArea');
 
-    $('.count').text(mainFormTextarea.attr('maxlength'))
+    $('.count').text(mainFormTextarea.attr('maxlength'));
 
     mainFormTextarea.on('change', (e)=>{
         const $this = $(e.currentTarget);
@@ -77,9 +79,26 @@ const checkTextareaLength = () => {
 
         (val) ? $textPlaceholder.hide() : $textPlaceholder.show();
     })
-}
+};
 
 const initClientsCarousel = () => {
+
+/*    $('#peopleListCarousel').addClass('owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        autoplaySpeed: 2000,
+        navSpeed: 2000,
+        dragEndSpeed: 2000,
+        responsive:{
+            1000:{
+                items: 3
+            }
+        }
+    });*/
+
     $('#clientsSlider').addClass('owl-carousel').owlCarousel({
         loop: true,
         margin: 10,
@@ -104,7 +123,7 @@ const initClientsCarousel = () => {
             }
         }
     })
-}
+};
 
 const initServicesCarousel = () => {
     const $container = $('#servicesSlider');
@@ -170,10 +189,13 @@ function formHandler() {
                         if($formId === 'invokeForm') {
                             ga('send', 'audit', 'Button');
                             console.log('send', 'audit', 'Button');
+                            if(window.location.pathname === "/identity") {
+                                window.open(briefFormUrl, "_blank")
+                            }
                         }
                     }
 
-                    $form.find('.contact__form-input').val('')
+                    $form.find('.contact__form-input').val('');
                     if($form.find('.contact__form-textarea').length) $form.find('.contact__form-textarea').val('');
                     if ($form.hasClass('invoke__form')) {
                         alert('Запрос принят, спасибо!');
@@ -350,6 +372,8 @@ const showPopup = (selector) => {
 
 
 $doc.on('ready', () => {
+    $('.removed').remove();
+
     checkViewport();
     checkEmptyFields();
     toggleMobileMenu();

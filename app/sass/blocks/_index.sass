@@ -19,9 +19,10 @@
   width: 33.333%
   &.people__item--lola
     .people__img
-      left: -55%
-      min-width: 510px
-      transform: scale(-1, 1)
+      //left: -25%
+      //min-width: 370px
+      left: -15%
+      max-width: 290px
   &.people__item--denis
     .people__img
       left: 0
@@ -70,6 +71,8 @@
     background-image: url('../img/svg/facebook.svg')
   &--instagram
     background-image: url('../img/svg/instagram.svg')
+  &--behance
+    background-image: url('../img/svg/behance.svg')
 
 
 .people__special
@@ -365,10 +368,24 @@ $navButtonsOffset: 80px
     width: 140px
   &.w80
     width: 80px
+  &.w90
+    width: 90px
   &.w100
     width: 100px
+  &.w110
+    width: 110px
+  &.w120
+    width: 120px
   &.w130
     width: 130px
+  &.w140
+    width: 140px
+  &.w150
+    width: 150px
+  &.w160
+    width: 160px
+  &.w170
+    width: 170px
 //max-height: 80px
 
 .clients__img
@@ -707,13 +724,19 @@ $navButtonsOffset: 80px
         left: 40px
     &.people__item--denis
       .people__portrait
-        top: -150px
-        right: -15px
+        //top: -150px
+        //right: -15px
+        top: -170px
+        right: 50px
         left: auto
     &.people__item--vlad
       .people__portrait
         top: -115px
         left: 30px
+    &.people__item--identity
+      .people__portrait
+        top: -140px
+        left: 15px
   .people__img-wrap
     background-image: none !important
   .people__desc
@@ -759,12 +782,12 @@ $navButtonsOffset: 80px
       order: -1
     &.people__item--lola
       .people__img-wrap
-        transform: scale(-1, 1)
-        background-position: 19% 0%
-        background-size: 275%
+        background-position: 50% -3%
+        background-size: 211%
     &.people__item--denis
       .people__img-wrap
-        background-position: 60% 0%
+        background-position: 93% 10%
+        background-size: 125%
     &.people__item--vlad
       .people__img-wrap
         background-position: 66% 4%
