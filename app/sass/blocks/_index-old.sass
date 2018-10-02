@@ -1,0 +1,1001 @@
+/*Clepsyndra - https://soundcloud.com/clepsydramusic */
+//info@ludi.digital
+.peoples__section
+  margin-top: 25px
+
+.peoples__box
+  position: relative
+  margin: 90px 0 10px 0
+  padding: 90px 0 20px 0
+  background: url('../img/svg/curve.svg')
+  background-repeat: no-repeat
+  z-index: 2
+
+.people__list
+  display: flex
+
+.people__item
+  position: relative
+  width: 33.333%
+  &.people__item--lola
+    .people__img
+      //left: -25%
+      //min-width: 370px
+      left: -15%
+      max-width: 290px
+  &.people__item--denis
+    .people__img
+      left: 0
+      max-height: 620px
+  &.people__item--vlad
+    .people__img
+      min-width: 390px
+      left: auto
+      right: 20px
+
+.people__portrait
+  max-width: 170px
+  z-index: 1
+
+
+.people__title
+  display: inline-block
+  &:hover
+    text-decoration: none
+
+
+.people__name
+  display: inline-block
+  margin-bottom: 5px
+  letter-spacing: 2.2px
+  color: #2a2a2a
+  transition: .25s ease-in
+  font-size: 26px
+  font-weight: 600
+  //font-family: 'GillSans'
+  &:hover
+    color: $orange
+
+
+.people__social
+  display: inline-block
+  width: 24px
+  height: 24px
+  background-size: contain
+  background-repeat: no-repeat
+  vertical-align: sub
+  margin-left: 10px
+  &--telegram
+    background-image: url('../img/svg/telegram.svg')
+  &--facebook
+    background-image: url('../img/svg/facebook.svg')
+  &--instagram
+    background-image: url('../img/svg/instagram.svg')
+  &--behance
+    background-image: url('../img/svg/behance.svg')
+
+
+.people__special
+  font-size: 15px
+  line-height: 1.2
+
+.people__img-wrap
+  position: relative
+  padding: 55%
+  margin: 100px 0 10px 0
+
+
+.people__img
+  position: absolute
+  left: 0
+  bottom: 0
+  max-width: 100%
+  height: auto
+  user-select: none
+
+
+.people__desc
+  p
+    font-size: 16px
+a.people__link
+  margin-top: 15px
+  font-weight: 500
+
+.services__box
+  position: relative
+  margin: 95px auto
+
+.services__curve
+  display: block
+  background: url('../img/svg/curve_mini.svg') center no-repeat
+  background-size: contain
+  width: 32px
+  height: 38px
+  transition: all .5s ease
+  opacity: .8
+  &-1,&-2,&-3,&-4,&-5,&-6
+    position: absolute
+    &.curve-animate
+      left: 50% !important
+      top: 50% !important
+      bottom: 50% !important
+      opacity: 0 !important
+  &-4,&-5,&-6
+    top: calc(100% + 50px)
+  &-1
+    transform: rotate(45deg) scale(1, -1)
+  &-3
+    transform: rotate(-45deg) scale(1, -1)
+  &-1,&-2,&-3
+    bottom: calc(100% + 30px)
+  &-1
+    left: 29%
+  //&.curve-animate
+  //  left: 50%
+  &-2
+    left: 50%
+    transform: translateX(-50%) scale(1, -1)
+  &-3
+    right: 29%
+  &-4
+    left: 20%
+    transform: rotate(-45deg) scale(1, -1)
+  &-5
+    left: 50%
+    transform: translateX(-50%)
+  &-6
+    right: 20%
+    transform: rotate(45deg) scale(1, -1)
+
+  &--big
+    width: 52px
+    height: 64px
+
+.services__inner
+  display: flex
+  .owl-item
+    .services__item
+      width: 100%
+      @include b(xs)
+        max-width: 320px
+        margin: 0 auto
+
+.services__item
+  width: 33.333%
+  &:hover
+    .services__link
+      color: $orange
+    .services__link:after
+      border-color: $orange
+    .services__ico
+      box-shadow: 0 0 15px 5px rgba(73, 97, 125, 0.15)
+
+.services__item-inner
+  position: relative
+  padding: 30px
+  margin: auto 10px
+  border-radius: 10px
+  background-color: #fff
+  border: solid 1px rgba(178, 168, 240, 0.07)
+  box-shadow: 0 0 5px 0 rgba(178, 168, 240, 0.33)
+  transition: all .3s ease
+  z-index: 2
+  &:hover
+    box-shadow: 0 0 32px 0 rgba(178, 168, 240, 0.53)
+
+.services__ico
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  transition: all .3s ease
+  box-shadow: 0 0 15px 5px rgba(73, 97, 125, 0.07)
+
+.services__text
+  color: $textLight
+  margin-top: 30px
+  font-size: 18px
+
+.services__link
+  margin-top: 5px
+  font-size: 18px
+  font-weight: 500
+
+.action__area
+  position: relative
+  margin: 60px auto
+
+.action__area-info
+  margin: 20px auto
+  text-align: center
+  font-size: 20px
+
+.action__area-desc
+  line-height: 1.2
+
+.action__area-price
+  display: block
+  margin-top: 20px
+  font-weight: 700
+  color: #4f5758
+
+
+.action__area-order
+  margin-top: 25px
+
+.video__box
+  background-color: #2a283a
+
+.video__inner
+  position: relative
+  color: #fff
+  font-size: 20px
+  padding: 70px 50px
+  overflow: hidden
+  &:after
+    content: ''
+    position: absolute
+    left: 65%
+    top: 33%
+    width: 334px
+    height: 226px
+    background: url(../img/crow.png) center no-repeat
+    background-size: contain
+
+.video__title
+  opacity: .2
+  text-transform: uppercase
+  margin-bottom: 15px
+
+.video__text
+
+.video__button
+  width: 150px
+  margin: 35px 0
+  box-shadow: none
+  border-color: #fff
+  color: #fff
+  background-color: rgba(#fff,.4)
+  &:hover
+    background: transparent
+    color: #fff
+
+.video__button-play
+  cursor: pointer
+  width: 65px
+  height: 65px
+  position: absolute
+  //right: 43%
+  left: 57%
+  top: 29%
+  z-index: 3
+  .triangle
+    position: absolute
+    top: 50%
+    left: 53%
+    transform: translate(-50%, -50%)
+
+.better__box
+  margin: 50px auto
+
+.better__title
+  p
+    max-width: 330px
+    line-height: 1.2
+    font-size: 32px
+    font-weight: 700
+    margin-bottom: 30px
+    &:after
+      content: ''
+      display: block
+      margin-top: 17px
+      width: 105px
+      height: 7px
+      background: $orange
+
+.better__list
+  list-style: none
+
+.better__item
+  font-size: 20px
+  margin-bottom: 15px
+  p
+    color: $grey
+
+.better__list-back-top
+  width: 42px
+  height: 42px
+  margin-left: auto
+
+$navButtonsOffset: 80px
+
+.clients__box
+  position: relative
+  padding: 0 0 55px 0
+  .owl-nav
+    //position: absolute
+    //top: 0
+    //bottom: 0
+    display: block !important
+    .owl-prev,.owl-next
+      height: 70%
+      width: 50px
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      background: url('../img/slider-nav-button.png') center no-repeat !important
+      span
+        font-size: 0
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+    .owl-prev
+      //left: -$navButtonsOffset
+      left: 0
+      right: auto
+    .owl-next
+      //right: -$navButtonsOffset
+      right: 0
+      left: auto
+      transform: translateY(-50%) scale(-1, 1)
+
+
+.clients__item
+  padding: 40px 0
+//&:hover
+//  .clients__img
+//    filter: grayscale(0%)
+
+
+.clients__inner
+  text-align: center
+
+
+.clients__img-wrap
+  display: flex
+  align-items: center
+  margin: 0 auto
+  width: 70px
+  height: 80px
+  &.hotto
+    width: 105px
+  &.ice-viking
+    width: 55px
+  &.iglot,&.flow
+    width: 115px
+  &.vash-doctor
+    width: 140px
+  &.w80
+    width: 80px
+  &.w90
+    width: 90px
+  &.w100
+    width: 100px
+  &.w110
+    width: 110px
+  &.w120
+    width: 120px
+  &.w130
+    width: 130px
+  &.w140
+    width: 140px
+  &.w150
+    width: 150px
+  &.w160
+    width: 160px
+  &.w170
+    width: 170px
+//max-height: 80px
+
+.clients__img
+  display: block
+  margin: 0 auto
+  transition: all .5s ease
+  filter: grayscale(100%)
+  opacity: .7
+
+
+//width: auto !important
+  //height: 80px
+  //opacity: .7
+
+.clients__title
+  margin-top: 5px
+  font-size: 15px
+  font-weight: 600
+  color: $grey
+
+.clients__desc
+  font-size: 13px
+  color: #949494
+
+/*Contacts*/
+
+.contact__block
+  padding: 50px 0 100px 0
+  background: #fff
+
+
+.contact__inner
+  display: flex
+//&>div
+//  width: 50%
+//  flex-grow: 1
+
+.contact__phones
+
+
+.contact__ready-text
+  color: #4f5758
+  max-width: 280px
+  font-size: 20px
+
+
+
+
+.contact__item
+  margin-top: 80px
+
+
+.contact__city
+  font-size: 32px
+  font-weight: 500
+  color: $orange
+
+
+.contact__people
+
+
+.contact__name,
+.contact__phone
+  display: inline-block
+
+.contact__name
+  font-size: 20px
+  font-weight: 600
+  min-width: 90px
+
+.contact__phone
+  font-size: 20px
+  color: $textColor
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+  &:focus
+    color: $textColor
+    text-decoration: none
+
+.contact__area
+  width: 500px
+  margin: -125px 0 -50px auto
+  padding: 60px 40px
+  background: #fff
+  box-shadow: 0 2px 9px 0 rgba(178, 168, 240, 0.23)
+  box-sizing: border-box
+  z-index: 3
+
+.contact__form
+  position: relative
+  &.isSend
+    .thanks__box
+      transform: scale(1)
+      opacity: .9
+
+.thanks__box
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background: #fff
+  user-select: none
+  transition: all .3s ease
+  transform: scale(0)
+  opacity: 0
+  z-index: 3
+
+.thanks__title
+  color: $orange
+  line-height: 1
+  font-size: 35px
+  font-weight: 600
+
+.thanks__text
+  color: $orange
+  font-size: 14px
+  font-weight: 500
+
+.contact__form-textgroup
+  position: relative
+  &:not(:first-child)
+    margin-top: 20px
+  &.required
+    &:after
+      content: 'Обязательное поле'
+      position: absolute
+      bottom: 5px
+      right: 10px
+      font-size: 10px
+      color: $textColor
+      opacity: .4
+
+
+.contact__form-input
+  width: 100%
+  font-size: 14px
+  padding-right: 110px
+  border-bottom: 1px solid #979797
+  line-height: 26px
+  &:focus
+    border-color: $orange
+  @include placeholder
+    font-weight: 400
+    opacity: .6
+    color: $textColor
+
+
+.contact__form-package
+  margin-top: 30px
+
+.contact__form-checkgroup
+  margin-bottom: 20px
+  &.w100
+    width: 100%
+  &.w50
+    width: 50%
+    float: left
+    &:before, &:after
+      content: ''
+      clear: both
+      width: 100%
+      display: table
+  &:hover .contact__form-switcher:not(:checked):not([disabled]):not(.disabled) + label
+    @include b(desktop)
+      .box
+        border-color: $orange
+      .type
+        color: $orange
+
+.contact__form-switcher
+  display: none
+  &:checked + label
+    .box
+      &:after
+        transform: scale(1) rotate(40deg)
+    .type
+      color: $orange
+  &.disabled,&[disabled="disabled"]
+    & + label
+      .box
+        border-color: #e9e9e9 !important
+        box-shadow: none !important
+        &:after
+          display: none
+      .type
+        color: #dfdfdf
+
+
+.contact__form-checkbox
+  display: flex
+  align-items: center
+  color: #4a4a4a
+  font-weight: 400
+  font-size: 14px
+  .box, .type
+    display: inline-block
+  .box
+    position: relative
+    width: 15px
+    min-width: 15px
+    height: 15px
+    min-height: 15px
+    border: 1px solid #979797
+    box-shadow: inset 0 1px 3px 0 rgba(178, 168, 240, 0.65)
+    border-radius: 2px
+    &:after
+      content: ''
+      position: absolute
+      bottom: 3px
+      width: 8px
+      right: 5px
+      height: 14px
+      border: 2.5px solid $orange
+      border-top: none
+      border-left: none
+      box-sizing: border-box
+      transition: all .3s ease
+      transform: scale(0) rotate(30deg)
+      transform-origin: right bottom
+  .type
+    transition: all .3s ease
+    margin-left: 8px
+    line-height: 1.1
+    user-select: none
+
+
+.contact__form-textarea-wrap
+  position: relative
+  margin-top: 30px
+  margin-bottom: 30px
+  clear: both
+  .text-placeholder
+    position: absolute
+    top: 15px
+    left: 15px
+    font-size: 13px
+    line-height: 1.2
+    pointer-events: none
+    opacity: .6
+  .count
+    position: absolute
+    right: 5px
+    bottom: 5px
+    font-size: 10px
+    opacity: .4
+    &:after
+      content: '\00a0символов'
+    &.count-error
+      color: red
+
+.contact__form-textarea
+  width: 100%
+  padding: 10px
+  border: solid 1px #cbcbcb
+  min-height: 95px
+  font-size: 14px
+  border-radius: 7px
+  resize: none
+  clear: both
+  &:focus +.text-placeholder
+    display: none !important
+
+.contact__form-submit
+  width: 100%
+  font-size: 18px
+  height: 44px
+  line-height: 42px
+
+.phantom-phone-list
+  position: absolute
+  left: 50%
+  top: auto
+  transform: translateX(-50%)
+
+.phantom-phone-link
+  font-size: 20px
+  color: $textColor
+
+.peoples__box
+  background-size: 1550px
+  background-position: center center
+
+/*Media*/
+@include b(xxl)
+  .peoples__section
+    overflow: hidden
+  .peoples__box
+    //background-position: 50% 100%
+    //background-size: contain
+    //&>.container
+      //background-color: $bgColor
+      //z-index: 2
+    &:before,&:after
+      display: block
+      content: ''
+      position: absolute
+      top: 47.5%
+      width: 21%
+      height: 12px
+      //height: 12.5px
+      //border-bottom: 1px solid #faa989
+      background: $orange
+      z-index: -1
+    &:before
+      left: 0
+    &:after
+      right: 0
+
+@include b(md)
+  .peoples__box
+//background-position: 30% center
+//background-size: cover
+
+
+@include b(desktop)
+  .people__list
+    align-items: flex-end
+  .people__item
+    &:hover
+      .people__desc
+        transform: scale(1) translateX(-50%)
+        opacity: .95
+    .people__portrait
+      position: absolute
+      top: 0
+      left: 0
+    &.people__item--lola
+      .people__portrait
+        top: -160px
+        left: 40px
+    &.people__item--denis
+      .people__portrait
+        //top: -150px
+        //right: -15px
+        top: -170px
+        right: 50px
+        left: auto
+    &.people__item--vlad
+      .people__portrait
+        top: -115px
+        left: 30px
+    &.people__item--identity
+      .people__portrait
+        top: -140px
+        left: 15px
+  .people__img-wrap
+    background-image: none !important
+  .people__desc
+    position: absolute
+    left: 50%
+    bottom: 155px
+    width: 300px
+    border-radius: 5px
+    background: #fff
+    box-shadow: 0 2px 4px 0 rgba(178, 168, 240, 0.35)
+    padding: 25px 17px
+    transform: scale(0) translateX(-50%)
+    opacity: 0
+    transition: .35s ease-out
+    transform-origin: left bottom
+    z-index: 1
+
+
+@include b(tablet)
+  .peoples__box
+    padding: 0
+    margin-top: 55px
+    background-image: none !important
+  .people__list
+    flex-wrap: wrap
+    justify-content: space-between
+  .people__img
+    display: none
+  .people__item
+    display: flex
+    margin: 0 auto 20px auto
+    flex-wrap: wrap
+    flex-basis: 220px
+    justify-content: center
+    .people__img-wrap
+      width: 200px
+      height: 200px
+      margin: 0 0 10px 0
+      padding: 0
+      border-radius: 50%
+      border: 1px solid #c5d4fa
+      background: #f2edf5
+      order: -1
+    &.people__item--lola
+      .people__img-wrap
+        background-position: 50% -3%
+        background-size: 211%
+    &.people__item--denis
+      .people__img-wrap
+        background-position: 93% 10%
+        background-size: 125%
+    &.people__item--vlad
+      .people__img-wrap
+        background-position: 66% 4%
+        background-size: 270%
+    .people__desc p
+      display: none
+    .people__link
+      margin-top: 10px
+
+  .contact__inner
+    align-items: center
+    flex-direction: column
+
+  .contact__area
+    width: 100%
+    margin-right: auto
+    margin-bottom: 40px
+    order: -1
+
+  .contact__form
+    max-width: 420px
+    margin: auto
+
+  .contact__phones-list
+    display: flex
+
+  .contact__ready-text
+    margin: 0 auto
+    max-width: 460px
+    text-align: center
+  .contact__item
+    flex-grow: 1
+    margin-top: 25px
+
+  .services__box
+    margin-bottom: 50px
+    .services__curve-4,
+    .services__curve-5,
+    .services__curve-6
+      top: calc(100% + 10px)
+
+@include b(sm)
+  .video__button-play
+    top: 34%
+    right: 33%
+  .video__inner:after
+    top: 38%
+    right: -8%
+  .contact__phones
+    padding-top: 30px
+    width: 100%
+  .phantom-phone-list
+    top: 45px
+  .clients__box
+    padding-bottom: 80px
+
+@include b(xs)
+  .phantom-phone-list
+    width: 100%
+    text-align: center
+    margin-top: 10px
+
+  .phantom-phone-link
+    font-size: 16px
+    color: $orange
+  .services__curve-1,
+  .services__curve-4
+    left: 5%
+  .services__curve-3,
+  .services__curve-6
+    right: 5%
+
+  .clients__box
+    padding-bottom: 20px
+
+  .clients__desc
+    margin: 0 auto
+    max-width: 175px
+
+  .action__area
+    margin-bottom: 30px
+
+  .video__inner
+    padding: 30px 0
+
+  .video__button-play
+    position: relative
+    left: 50%
+    right: 0
+    transform: translateX(-50%)
+    margin-top: 40px
+
+  .video__content
+    max-width: 300px
+    margin: 0 auto
+
+  .video__button
+    margin-top: 140px
+
+  .video__inner:after
+    right: auto
+    left: 37%
+    top: 51%
+
+  .better__box
+    margin-bottom: 0
+
+  .better__title p
+    max-width: 100%
+    font-size: 24px
+
+  .better__list
+    margin-top: 30px
+    list-style: disc
+
+  .better__item
+    margin-left: 25px
+
+  .contact__block
+    background: transparent
+    padding: 0
+
+  .contact__phones-list
+    flex-direction: column
+    text-align: center
+
+  .contact__area
+    padding: 40px 10px
+    margin-top: 50px
+
+  .contact__form-checkgroup
+    width: 100% !important
+
+  .contact__form-checkbox
+    align-items: flex-start
+
+  .contact__phones
+    order: -2
+
+
+@include b(xxs)
+  .people__item
+    width: 100px
+    max-width: 320px
+    flex-basis: 100%
+    flex-wrap: nowrap
+    margin-bottom: 40px
+  &.people__item--denis .people__img-wrap
+    background-size: 100%
+  .people__img-wrap
+    position: relative
+    &:after
+      content: ''
+      width: 24px
+      height: 24px
+      display: block
+      position: absolute
+      top: 22%
+      right: -5px
+      border-radius: 50%
+      background-size: contain
+      background-repeat: no-repeat
+  //background: red !important
+  &.people__item--lola .people__img-wrap:after
+    background-image: url('../img/svg/instagram.svg')
+    left: -5px
+  &.people__item--denis .people__img-wrap:after
+    background-image: url('../img/svg/facebook.svg')
+  &.people__item--vlad .people__img-wrap
+    background-position: 70% 4% !important
+    &:after
+      background-image: url('../img/svg/telegram.svg')
+  .people__list
+    justify-content: center
+    .people__img-wrap
+      width: 112px
+      height: 112px
+      flex-basis: 112px
+    .people__item
+      &>div
+        width: 50%
+      .people__additional
+        box-sizing: border-box
+      &:not(:nth-child(even))
+        .people__additional
+          padding-left: 14px
+      &:nth-child(even)
+        .people__additional
+          padding-right: 14px
+          order: -2
+    .people__name
+      margin-bottom: 0
+    .people__special
+      font-size: 14px
+    .people__portrait
+      max-width: 100%
+    .people__link
+      margin-top: 5px
+  .people__social
+    display: none
+
+  .better__list
+    list-style: disc
+
+@include bc((max:650))
+  .services__inner
+    flex-direction: column
+  .services__item
+    width: 100%
+    max-width: 300px
+    margin: 0 auto 20px auto

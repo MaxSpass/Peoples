@@ -1,0 +1,54 @@
+@include b(desktop)
+  .peoples__box
+    .container
+      //max-width: 1080px
+  .people__list.owl-carousel
+    .owl-item.active
+      .people__item--vlad
+        width: 120%
+        .people__img
+          max-width: 120%
+          margin-left: -20%
+    .owl-stage
+      display: flex
+      align-items: flex-end
+    .owl-item.active.focus.focus-0
+      .people__item--vlad
+        .people__img
+          margin-left: 0%
+
+    .owl-nav
+      position: relative
+      display: flex
+      justify-content: space-between
+      &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 0
+        width: 100%
+        height: 2px
+        transform: translateY(-50%)
+        background: $orange
+        z-index: 0
+      .owl-prev, .owl-next
+        width: 45px
+        height: 45px
+        line-height: 30px
+        border-radius: 50%
+        font-size: 30px
+        color: #fff
+        background: $orange
+        transition: all .3s ease
+        z-index: 1
+        span
+          display: inline-block
+          vertical-align: top
+          line-height: 32px
+          text-align: center
+        &:hover
+          background: $orange_light
+      .owl-prev
+      .owl-next
+        span
+          padding-left: 2px

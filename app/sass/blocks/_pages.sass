@@ -63,19 +63,23 @@
     background-size: contain
     background-repeat: no-repeat
     background-position: center center
-  &.dasha:before
-    background-image: url('../img/dasha.png')
-    width: 310px
-    height: 460px
-    right: 93px
-    @include b(tablet)
-      width: 270px
-      height: 400px
-      right: -40px
-    @include b(xs)
-      width: 100%
-      left: auto
-      right: auto
+  &.dasha
+    .digital__exp-left
+      @include b(desktop)
+        height: 460px
+    &:before
+      background-image: url('../img/dasha.png')
+      width: 380px
+      height: 475px
+      right: 42px
+      @include b(tablet)
+        width: 270px
+        height: 400px
+        right: -40px
+      @include b(xs)
+        width: 100%
+        left: auto
+        right: auto
   &.denis:before
     background-image: url('../img/denis.png')
   &.vlad:before

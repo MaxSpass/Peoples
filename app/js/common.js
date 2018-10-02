@@ -7,8 +7,9 @@ let isMobile = false;
 let isTablet = false;
 let isDesktop = false
 let servicesSliderInited = false;
+let peoplesSliderInited = false;
 
-const checkViewport = () => {
+const switchViewportVars = () => {
     const winWidth = $win.width();
 
     if(winWidth > 991) {
@@ -26,7 +27,9 @@ const checkViewport = () => {
         isDesktop = false;
         isTablet = false;
     }
-}
+};
+
+window.switchViewportVars = switchViewportVars;
 
 const setBgByImg = () => {
     $('.people__img-wrap').each((i,el)=>{
@@ -81,24 +84,57 @@ const checkTextareaLength = () => {
     })
 };
 
-const initClientsCarousel = () => {
+const initPeoplesCarousel = () => {
+    return false;
+    if(isDesktop && !peoplesSliderInited) {
+        peoplesSliderInited = true;
+        $('#peopleListCarousel').addClass('owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            // autoplay: true,
+            autoplay: false,
+            autoplayHoverPause: true,
+            autoplaySpeed: 4000,
+            navSpeed: 2000,
+            // mouseDrag: false,
+            responsive:{
+                1000:{
+                    items: 3
+                }
+            },
+            onTranslated: changeSliderOffsets,
+            onDragged: changeSliderOffsets,
+            onInitialized : changeSliderOffsets,
+        });
+    }
+};
 
-/*    $('#peopleListCarousel').addClass('owl-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        autoplay: true,
-        autoplayHoverPause: true,
-        autoplaySpeed: 2000,
-        navSpeed: 2000,
-        dragEndSpeed: 2000,
-        responsive:{
-            1000:{
-                items: 3
+const changeSliderOffsets = (e) => {
+    console.log('changeSliderOffsets ONCE');
+    const element   = e.target;
+    const $slider = $(element);
+    setTimeout(()=>{
+        const $active = $slider.find('.owl-item.active');
+        $slider.find('.owl-item').each((i,el)=>{
+            const $el = $(el);
+            const index = $active.index($el);
+            const inFocusIndex = `focus-${index}`;
+
+            if($el.hasClass('active')) {
+                $el.addClass('focus');
+                $el.addClass(inFocusIndex);
+                $el.data('index',index);
+                $el.removeClass('focus-'+$el.data('index'));
+            } else {
+                $el.removeClass('focus');
             }
-        }
-    });*/
 
+        });
+    },0)
+};
+
+const initClientsCarousel = () => {
     $('#clientsSlider').addClass('owl-carousel').owlCarousel({
         loop: true,
         margin: 10,
@@ -374,10 +410,11 @@ const showPopup = (selector) => {
 $doc.on('ready', () => {
     $('.removed').remove();
 
-    checkViewport();
+    switchViewportVars();
     checkEmptyFields();
     toggleMobileMenu();
     setBgByImg();
+    initPeoplesCarousel();
     initClientsCarousel();
     initServicesCarousel();
     // initLinksCarousel();
@@ -406,7 +443,7 @@ $win.on('scroll', ()=>{
 });
 
 $win.on('resize', () => {
-    checkViewport();
+    switchViewportVars();
 
     const winWidth = $win.width();
 
@@ -418,9 +455,18 @@ $win.on('resize', () => {
 
     if(isMobile || isDesktop && servicesSliderInited) {
         if(isSlider && $('#servicesSlider').data('owl.carousel')) {
-            $('#servicesSlider').data('owl.carousel').destroy();
             servicesSliderInited = false;
+            $('#servicesSlider').data('owl.carousel').destroy();
         };
+    }
+
+    if(!isDesktop && peoplesSliderInited) {
+        if($('#peopleListCarousel').data('owl.carousel')) {
+            peoplesSliderInited = false;
+            $('#peopleListCarousel').data('owl.carousel').destroy();
+        }
+    } else {
+        initPeoplesCarousel();
     }
 
     if(isTablet) {
