@@ -19,17 +19,17 @@
   //width: 33.333%
   &.people__item--lola
     .people__img
-      max-width: 290px
+      //max-width: 290px
       //left: -15%
       //max-width: 290px
   &.people__item--denis
     .people__img
       left: 0
       //max-height: 620px
-      max-width: 200px
+      //max-width: 200px
   &.people__item--identity
     .people__img
-      max-width: 200px
+      //max-width: 200px
   &.people__item--vlad
     .people__img
 
@@ -233,15 +233,42 @@ a.people__link
   font-size: 20px
   padding: 70px 50px
   overflow: hidden
-  &:after
-    content: ''
-    position: absolute
-    left: 65%
-    top: 33%
-    width: 334px
-    height: 226px
-    background: url(../img/crow.png) center no-repeat
-    background-size: contain
+
+.voronka
+  position: absolute
+  left: 65%
+  top: 33%
+  width: 334px
+  height: 226px
+  background: url(../img/crow.png) center no-repeat
+  background-size: contain
+  cursor: pointer
+  color: $textColor
+  text-align: center
+  .people__desc
+    display: none
+  @include b(desktop)
+    .people__desc
+      display: block
+      position: absolute
+      left: 50%
+      bottom: 105%
+      padding: 20px 10px
+      width: 300px
+      border-radius: 5px
+      background: #fff
+      box-shadow: 0 2px 4px 0 rgba(178, 168, 240, 0.35)
+      transform: scale(0) translateX(-50%)
+      opacity: 0
+      transition: .35s ease-out
+      transform-origin: left bottom
+      z-index: 1
+  &:hover
+    .people__desc
+      @include b(desktop)
+        transform: scale(1) translateX(-50%)
+        opacity: .95
+
 
 .video__title
   opacity: .2
@@ -674,7 +701,7 @@ $navButtonsOffset: 80px
 
 .peoples__box
   background-size: 1550px
-  background-position: center center
+  background-position: center 100%
 
 @import './_ludi-slider.sass'
 
@@ -692,9 +719,9 @@ $navButtonsOffset: 80px
       display: block
       content: ''
       position: absolute
-      top: 47.5%
+      top: 55.9%
       width: 21%
-      height: 12px
+      height: 11px
       //height: 12.5px
       //border-bottom: 1px solid #faa989
       background: $orange
@@ -704,41 +731,37 @@ $navButtonsOffset: 80px
     &:after
       right: 0
 
-@include b(md)
-  .peoples__box
-//background-position: 30% center
-//background-size: cover
-
 
 @include b(desktop)
   .people__list
     align-items: flex-end
-  //.people__item
-  //  &:hover
-  //    .people__desc
-  //      transform: scale(1) translateX(-50%)
-  //      opacity: .95
-  //  .people__portrait
-  //    position: absolute
-  //    top: 0
-  //    left: 0
-  //  &.people__item--lola
-  //    .people__portrait
-  //      top: -160px
-  //      left: 40px
-  //  &.people__item--denis
-  //    .people__portrait
-  //      top: -170px
-  //      right: 50px
-  //      left: auto
-  //  &.people__item--vlad
-  //    .people__portrait
-  //      top: -115px
-  //      left: 30px
-  //  &.people__item--identity
-  //    .people__portrait
-  //      top: -140px
-  //      left: 15px
+  .people__item
+    user-select: none
+    .people__portrait
+      position: absolute
+      top: 0
+      left: 0
+    &:hover
+      .people__desc
+        transform: scale(1) translateX(-50%)
+        opacity: .95
+    &.people__item--lola
+      .people__portrait
+        top: -70px
+        left: 55px
+    &.people__item--denis
+      .people__portrait
+        top: -15px
+        right: -5px
+        left: auto
+    &.people__item--vlad
+      .people__portrait
+        top: -60px
+        left: 30px
+    &.people__item--identity
+      .people__portrait
+        top: -25px
+        left: 60px
   .people__img-wrap
     background-image: none !important
   .people__desc
@@ -781,6 +804,7 @@ $navButtonsOffset: 80px
       border-radius: 50%
       border: 1px solid #c5d4fa
       background: #f2edf5
+      background-repeat: no-repeat
       order: -1
     &.people__item--lola
       .people__img-wrap
@@ -788,12 +812,16 @@ $navButtonsOffset: 80px
         background-size: 211%
     &.people__item--denis
       .people__img-wrap
-        background-position: 93% 10%
-        background-size: 125%
+        background-position: 61% 12%
+        background-size: 210%
     &.people__item--vlad
       .people__img-wrap
-        background-position: 66% 4%
-        background-size: 270%
+        background-position: 67% 1%
+        background-size: 245%
+    &.people__item--identity
+      .people__img-wrap
+        background-position: 76% -6%
+        background-size: 220%
     .people__desc p
       display: none
     .people__link
@@ -832,10 +860,14 @@ $navButtonsOffset: 80px
       top: calc(100% + 10px)
 
 @include b(sm)
+  .people__item
+    flex-basis: 50%
+    flex-direction: column
+    align-items: center
   .video__button-play
     top: 34%
     right: 33%
-  .video__inner:after
+  .voronka
     top: 38%
     right: -8%
   .contact__phones
@@ -872,6 +904,9 @@ $navButtonsOffset: 80px
   .action__area
     margin-bottom: 30px
 
+  .video__content
+    position: relative
+
   .video__inner
     padding: 30px 0
 
@@ -889,7 +924,7 @@ $navButtonsOffset: 80px
   .video__button
     margin-top: 140px
 
-  .video__inner:after
+  .voronka
     right: auto
     left: 37%
     top: 51%
@@ -962,6 +997,9 @@ $navButtonsOffset: 80px
     background-position: 70% 4% !important
     &:after
       background-image: url('../img/svg/telegram.svg')
+  &.people__item--identity .people__img-wrap
+    &:after
+      background-image: url('../img/svg/behance.svg')
   .people__list
     justify-content: center
     .people__img-wrap

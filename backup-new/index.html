@@ -38,9 +38,10 @@
             <li class="header__item"><a class="link header__link" href="#about">О нас</a></li>
             <li class="header__item"><a class="link header__link" href="#services">Услуги</a>
               <ul class="header__list_sub">
-                <li class="header__item_sub"><a class="link header__link_sub" href="./ppc">Контекстная реклама</a></li>
-                <li class="header__item_sub"><a class="link header__link_sub" href="./smm">Таргетинговая реклама</a></li>
-                <li class="header__item_sub"><a class="link header__link_sub" href="./smm-content">Контент для соцсетей</a></li>
+                <li class="header__item_sub"><a class="link header__link_sub" href="/ppc">Контекстная реклама</a></li>
+                <li class="header__item_sub"><a class="link header__link_sub" href="/smm">Таргетинговая реклама</a></li>
+                <li class="header__item_sub"><a class="link header__link_sub" href="/smm-content">Контент для соцсетей</a></li>
+                <li class="header__item_sub"><a class="link header__link_sub" href="/identity">Айдентика</a></li>
               </ul>
             </li>
             <li class="header__item"><a class="link header__link" href="#contacts">Нанять</a></li>
@@ -65,14 +66,13 @@
         <h2 class="h2 thin mt-5">для малого и среднего бизнеса</h2>
       </div>
       <ul class="phantom-phone-list hidden-md hidden-lg">
-        <li class="phantom-phone-item"><a class="link phantom-phone-link icon-call" href="tel:+380663492552">+38 (066) 349 25 52</a></li>
+        <li class="phantom-phone-item"><a class="link phantom-phone-link icon-call" href="tel:+380950019017">+38 (095) 001 90 17</a></li>
       </ul>
     </div>
     <div class="peoples__box">
       <div class="container">
-        <ul class="people__list">
+        <ul id="peopleListCarousel" class="people__list">
           <li class="people__item people__item--lola">
-            <div class="people__img-wrap"><img class="people__img" src="/img/main-dasha.png"></div>
             <div class="people__additional">
               <div class="people__portrait">
                     <span class="people__title">
@@ -86,9 +86,9 @@
                 <p>Красивая картинка, располагающий текст и внимание людей, которые интересуются тем, чем вы занимаетесь. <br>Закрыть эти три пункта «на отлично» – моя главная задача.</p><a class="linked linked-arrow people__link" href="/smm-content">Подробно</a>
               </div>
             </div>
+            <div class="people__img-wrap"><img class="people__img" src="/img/main-dasha.png"></div>
           </li>
           <li class="people__item people__item--denis">
-            <div class="people__img-wrap"><img class="people__img" src="/img/main-denis.png"></div>
             <div class="people__additional">
               <div class="people__portrait">
                     <span class="people__title">
@@ -98,12 +98,12 @@
                 <div class="people__special">Реклама в Facebook, Instagram</div>
               </div>
               <div class="people__desc">
-                <p>Привет! Я в маркетинге с 2012го. Сооснователь сети Типичный Днепр, работал в холдингах UMH Фото Group и 1+1 медиа над такими проектами, как Комсомольская Правда в Украине, ovva.tv, 1+1video, Media Hack Weekend 2017 и W:here. Продвигал соцсети турагентств, event-агентств</p><a class="linked linked-arrow people__link" href="/smm-reklama">Подробно</a>
+                <p>Привет! Я в маркетинге с 2012го. Сооснователь сети Типичный Днепр, работал в холдингах UMH Фото Group и 1+1 медиа над такими проектами, как Комсомольская Правда в Украине, ovva.tv, 1+1video, Media Hack Weekend 2017 и W:here. Продвигал соцсети турагентств, event-агентств</p><a class="linked linked-arrow people__link" href="/smm">Подробно</a>
               </div>
             </div>
+            <div class="people__img-wrap"><img class="people__img" src="/img/main-denis.png"></div>
           </li>
           <li class="people__item people__item--vlad">
-            <div class="people__img-wrap"><img class="people__img" src="/img/main-vlad.png"></div>
             <div class="people__additional">
               <div class="people__portrait">
                     <span class="people__title">
@@ -113,10 +113,28 @@
                 <div class="people__special">Контекстная реклама в Google и Яндекс</div>
               </div>
               <div class="people__desc">
-                <p>Более 5 лет в сфере интернет рекламы. Сертифицированный партнер Google Adwords. <br>Adwords — хитрый змей, но я покажу как его обуздать и использовать на благо бизнеса.</p><a class="linked linked-arrow people__link" href="/kontekstnaya-reklama">Подробно</a>
+                <p>Более 5 лет в сфере интернет рекламы. Сертифицированный партнер Google Adwords. <br>Adwords — хитрый змей, но я покажу как его обуздать и использовать на благо бизнеса.</p><a class="linked linked-arrow people__link" href="/ppc">Подробно</a>
               </div>
             </div>
+            <div class="people__img-wrap"><img class="people__img" src="/img/main-vlad.png"></div>
           </li>
+
+          <li class="people__item people__item--identity removed">
+            <div class="people__additional">
+              <div class="people__portrait">
+                    <span class="people__title">
+                      <a href="./identity" class="people__name">Катя</a>
+                      <a href="https://www.behance.net/vyazovskay8f23" target="_blank" class="people__social people__social--behance"></a>
+                    </span>
+                <div class="people__special">Айдентика</div>
+              </div>
+              <div class="people__desc">
+                <p>Я могу создать для вас уникальный продукт, который поможет вашему бизнесу выстоять на сегодняшнем конкурентном рынке. <br>Делаю больше чем красивые картинки, создаю эмоции для ваших брендов.</p><a class="linked linked-arrow people__link" href="/identity">Подробно</a>
+              </div>
+            </div>
+            <div class="people__img-wrap"><img class="people__img" src="/img/main-katya.png"></div>
+          </li>
+
         </ul>
       </div>
     </div>
@@ -135,13 +153,15 @@
           <div class="services__item">
             <div class="services__item-inner">
               <div class="services__ico"><img src="img/svg/ic-context-adv.svg" alt="Контекстная реклама в Google и Яндекс"></div>
-              <p class="services__text">Контекстная реклама в Google и Яндекс</p><a class="services__link linked linked-arrow linked-grey" href="./kontekstnaya-reklama" title="Контекстная реклама в Google и Яндекс">Подробнее</a>
+              <p class="services__text">Контекстная реклама в Google и Яндекс</p>
+              <a class="services__link linked linked-arrow linked-grey" href="./ppc" title="Контекстная реклама в Google и Яндекс">Подробнее</a>
             </div>
           </div>
           <div class="services__item">
             <div class="services__item-inner">
               <div class="services__ico"><img src="img/svg/ic-target-adv.svg" alt="Таргетинговая реклама Facebook и Instagram."></div>
-              <p class="services__text">Таргетинговая реклама Facebook и Instagram.</p><a class="services__link linked linked-arrow linked-grey" href="./smm-reklama" title="Таргетинговая реклама Facebook и Instagram.">Подробнее</a>
+              <p class="services__text">Таргетинговая реклама Facebook и Instagram.</p>
+              <a class="services__link linked linked-arrow linked-grey" href="./smm" title="Таргетинговая реклама Facebook и Instagram.">Подробнее</a>
             </div>
           </div>
           <div class="services__item">
@@ -204,6 +224,94 @@
     <h2 class="h1 bold center">Наши клиенты</h2>
     <div class="clients__box">
       <div class="clients__slider" id="clientsSlider">
+
+        <div class="clients__item">
+          <div class="clients__inner">
+            <div class="clients__img-wrap w120"><img class="clients__img" src="/img/clients/05.png" alt="Caudax"></div>
+            <div class="clients__title">Caudax</div>
+            <div class="clients__desc">IT-консалтинг</div>
+          </div>
+        </div>
+
+        <div class="clients__item">
+          <div class="clients__inner">
+            <div class="clients__img-wrap w170"><img class="clients__img" src="/img/clients/06.png" alt="Accommodo 192"></div>
+            <div class="clients__title">Accommodo 192</div>
+            <div class="clients__desc">Apart Hotel</div>
+          </div>
+        </div>
+
+        <div class="clients__item">
+          <div class="clients__inner">
+            <div class="clients__img-wrap w170"><img class="clients__img" src="/img/clients/07.png" alt="Vildar"></div>
+            <div class="clients__title">Vildar</div>
+            <div class="clients__desc">Строительная компания</div>
+          </div>
+        </div>
+
+        <div class="clients__item">
+          <div class="clients__inner">
+            <div class="clients__img-wrap w100"><img class="clients__img" src="/img/clients/08.png" alt="Граф матрас"></div>
+            <div class="clients__title">Граф матрас</div>
+            <div class="clients__desc">интернет-магазин</div>
+          </div>
+        </div>
+
+        <div class="clients__item">
+          <div class="clients__inner">
+            <div class="clients__img-wrap w100"><img class="clients__img" src="/img/clients/09.png" alt="Pushka school"></div>
+            <div class="clients__title">Pushka school</div>
+            <div class="clients__desc">школа конструирования одежды</div>
+          </div>
+        </div>
+
+        <div class="clients__item">
+          <div class="clients__inner">
+            <div class="clients__img-wrap w80"><img class="clients__img" src="/img/clients/010.png" alt="Кураж Базар"></div>
+            <div class="clients__title">Кураж Базар</div>
+            <div class="clients__desc">Самая большая барахолка made in Kyiv</div>
+          </div>
+        </div>
+
+        <div class="clients__item">
+          <div class="clients__inner">
+            <div class="clients__img-wrap w120"><img class="clients__img" src="/img/clients/011.png" alt="Princess man`s club"></div>
+            <div class="clients__title">Princess man`s club</div>
+            <div class="clients__desc">Мужской клуб</div>
+          </div>
+        </div>
+
+        <div class="clients__item">
+          <div class="clients__inner">
+            <div class="clients__img-wrap w100"><img class="clients__img" src="/img/clients/015.png" alt="ZVD"></div>
+            <div class="clients__title">ZVD</div>
+          </div>
+        </div>
+
+        <div class="clients__item">
+          <div class="clients__inner">
+            <div class="clients__img-wrap w120"><img class="clients__img" src="/img/clients/016.png" alt="Уличная Еда"></div>
+            <div class="clients__title">Уличная Еда</div>
+            <div class="clients__desc">Фестиваль уличной еды</div>
+          </div>
+        </div>
+
+        <div class="clients__item">
+          <div class="clients__inner">
+            <div class="clients__img-wrap w170"><img class="clients__img" src="/img/clients/017.png" alt="RTR.ua"></div>
+            <div class="clients__title">RTR.ua</div>
+            <div class="clients__desc">Фестиваль Скорости RTR 2018</div>
+          </div>
+        </div>
+
+        <div class="clients__item">
+          <div class="clients__inner">
+            <div class="clients__img-wrap w90"><img class="clients__img" src="/img/clients/018.png" alt="Global Hack Weekend"></div>
+            <div class="clients__title">Global Hack Weekend</div>
+            <div class="clients__desc">Крупнейший хакатон в Восточной Европе</div>
+          </div>
+        </div>
+
         <div class="clients__item">
           <div class="clients__inner">
             <div class="clients__img-wrap"><img class="clients__img" src="/img/clients/01.png" alt="Hakuna Matata"></div>
@@ -230,62 +338,6 @@
             <div class="clients__img-wrap ice-viking"><img class="clients__img" src="/img/clients/04.png" alt="Icevikings"></div>
             <div class="clients__title">Icevikings</div>
             <div class="clients__desc">Авторские туры в Исландию</div>
-          </div>
-        </div>
-        <div class="clients__item">
-          <div class="clients__inner">
-            <div class="clients__img-wrap w100"><img class="clients__img" src="/img/clients/05.png" alt="Bronx colors"></div>
-            <div class="clients__title">Bronx colors</div>
-            <div class="clients__desc">Cosmetics makeup</div>
-          </div>
-        </div>
-        <div class="clients__item">
-          <div class="clients__inner">
-            <div class="clients__img-wrap iglot"><img class="clients__img" src="/img/clients/06.png" alt="Inglot"></div>
-            <div class="clients__title">Inglot</div>
-            <div class="clients__desc">Сеть магазинов косметики и парфюмерии</div>
-          </div>
-        </div>
-        <div class="clients__item">
-          <div class="clients__inner">
-            <div class="clients__img-wrap flow"><img class="clients__img" src="/img/clients/07.png" alt="FLOW"></div>
-            <div class="clients__title">FLOW</div>
-            <div class="clients__desc">Магазин одежды</div>
-          </div>
-        </div>
-        <div class="clients__item">
-          <div class="clients__inner">
-            <div class="clients__img-wrap w80"><img class="clients__img" src="/img/clients/08.png" alt="America Store"></div>
-            <div class="clients__title">America Store</div>
-            <div class="clients__desc">Интернет-магазин одежды</div>
-          </div>
-        </div>
-        <div class="clients__item">
-          <div class="clients__inner">
-            <div class="clients__img-wrap w80"><img class="clients__img" src="/img/clients/09.png" alt="One Black Coffee, Please"></div>
-            <div class="clients__title">One Black Coffee, Please</div>
-            <div class="clients__desc">Кофейня</div>
-          </div>
-        </div>
-        <div class="clients__item">
-          <div class="clients__inner">
-            <div class="clients__img-wrap vash-doctor"><img class="clients__img" src="/img/clients/010.png" alt="Ваш Доктор"></div>
-            <div class="clients__title">Ваш Доктор</div>
-            <div class="clients__desc">Лечебно-консультационный центр</div>
-          </div>
-        </div>
-        <div class="clients__item">
-          <div class="clients__inner">
-            <div class="clients__img-wrap w80"><img class="clients__img" src="/img/clients/011.png" alt="Eboreshki"></div>
-            <div class="clients__title">Eboreshki</div>
-            <div class="clients__desc">Пекарня</div>
-          </div>
-        </div>
-        <div class="clients__item">
-          <div class="clients__inner">
-            <div class="clients__img-wrap w80"><img class="clients__img" src="/img/clients/012.png" alt="Votoot"></div>
-            <div class="clients__title">Votoot</div>
-            <div class="clients__desc">Мобильное приложение</div>
           </div>
         </div>
         <div class="clients__item">

@@ -54,6 +54,32 @@ ul,ol
     color: $orange
     text-decoration: none
 
+.grey__box-links
+  text-align: center
+  vertical-align: bottom
+  @include b(xs)
+    display: none
+  .owl-stage-outer
+    z-index: 1
+  &.owl-carousel
+    li
+      width: 100%
+    .grey__box-link
+      padding-left: 5px
+      font-size: 15px
+    .owl-nav
+      width: 102%
+      position: absolute
+      top: 50%
+      left: 0
+      right: 0
+      display: flex
+      justify-content: space-between
+      transform: translateY(-50%)
+      font-size: 22px
+      color: $orange
+      z-index: 0
+
 .linked
   display: inline-block
   letter-spacing: .5px
@@ -74,7 +100,6 @@ ul,ol
     &:before, &:after
       display: inline-block
       content: ''
-      //background: url('../img/used/link-arrow.svg') center center no-repeat
       width: 10px
       height: 10px
       transition: all .3s ease

@@ -29,12 +29,11 @@ const switchViewportVars = () => {
     }
 };
 
-window.switchViewportVars = switchViewportVars;
-
 const setBgByImg = () => {
     $('.people__img-wrap').each((i,el)=>{
         const $this = $(el);
-        const src = $this.find('img').attr('src');
+        const srcDefault = $this.find('img').attr('src');
+        const src = (srcDefault) ? srcDefault : $this.find('img').attr('srcset').split(" ")[0];
         $this.css('background-image',`url("${src}")`)
     })
 };
@@ -85,7 +84,6 @@ const checkTextareaLength = () => {
 };
 
 const initPeoplesCarousel = () => {
-    return false;
     if(isDesktop && !peoplesSliderInited) {
         peoplesSliderInited = true;
         $('#peopleListCarousel').addClass('owl-carousel').owlCarousel({
@@ -97,21 +95,20 @@ const initPeoplesCarousel = () => {
             autoplayHoverPause: true,
             autoplaySpeed: 4000,
             navSpeed: 2000,
-            // mouseDrag: false,
+            mouseDrag: false,
             responsive:{
                 1000:{
                     items: 3
                 }
             },
-            onTranslated: changeSliderOffsets,
+/*            onTranslated: changeSliderOffsets,
             onDragged: changeSliderOffsets,
-            onInitialized : changeSliderOffsets,
+            onInitialized : changeSliderOffsets,*/
         });
     }
 };
 
-const changeSliderOffsets = (e) => {
-    console.log('changeSliderOffsets ONCE');
+/*const changeSliderOffsets = (e) => {
     const element   = e.target;
     const $slider = $(element);
     setTimeout(()=>{
@@ -132,7 +129,7 @@ const changeSliderOffsets = (e) => {
 
         });
     },0)
-};
+};*/
 
 const initClientsCarousel = () => {
     $('#clientsSlider').addClass('owl-carousel').owlCarousel({
@@ -359,33 +356,31 @@ const checkCurveAnimate = () => {
     }
 };
 
-// const initLinksCarousel = () => {
-//
-//     const $boxLinks = $('.grey__box-links');
-//
-//     if($boxLinks.children().length > 2) {
-//         $('.grey__box-links').addClass('owl-carousel').owlCarousel({
-//             // nav: true,
-//             // autoplay: false,
-//             // loop: true,
-//             margin: 10,
-//             autoplayHoverPause: true,
-//             autoplaySpeed: 2000,
-//             navSpeed: 2000,
-//             dragEndSpeed: 2000,
-//             responsive:{
-//                 0:{
-//                     items: 1
-//                 },
-//                 480:{
-//                     items: 2
-//                 },
-//             }
-//         })
-//     } else {
-//         $boxLinks.addClass('noSlider');
-//     }
-// };
+const initLinksCarousel = () => {
+
+    const $boxLinks = $('.grey__box-links');
+
+    if($boxLinks.children().length > 2) {
+        $boxLinks.addClass('owl-carousel').owlCarousel({
+            nav: true,
+            // autoplay: false,
+            // loop: true,
+            margin: 10,
+            autoplayHoverPause: true,
+            autoplaySpeed: 2000,
+            navSpeed: 2000,
+            dragEndSpeed: 2000,
+            responsive:{
+                0:{
+                    items: 2
+                },
+            }
+        })
+    }
+    // else {
+    //     $boxLinks.addClass('noSlide2r');
+    // }
+};
 
 const registerPoupClose = () => {
     $doc.on('click', '.popup__close, .popup__backdrop', ()=>{
@@ -417,7 +412,7 @@ $doc.on('ready', () => {
     initPeoplesCarousel();
     initClientsCarousel();
     initServicesCarousel();
-    // initLinksCarousel();
+    initLinksCarousel();
     checkTextareaLength();
     checkSubMenus();
     formHandler();
