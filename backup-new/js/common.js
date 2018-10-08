@@ -7,8 +7,9 @@ let isMobile = false;
 let isTablet = false;
 let isDesktop = false
 let servicesSliderInited = false;
+let peoplesSliderInited = false;
 
-const checkViewport = () => {
+const switchViewportVars = () => {
     const winWidth = $win.width();
 
     if(winWidth > 991) {
@@ -26,12 +27,13 @@ const checkViewport = () => {
         isDesktop = false;
         isTablet = false;
     }
-}
+};
 
 const setBgByImg = () => {
     $('.people__img-wrap').each((i,el)=>{
         const $this = $(el);
-        const src = $this.find('img').attr('src');
+        const srcDefault = $this.find('img').attr('src');
+        const src = (srcDefault) ? srcDefault : $this.find('img').attr('srcset').split(" ")[0];
         $this.css('background-image',`url("${src}")`)
     })
 };
@@ -67,7 +69,7 @@ const checkEmptyFields = () => {
 const checkTextareaLength = () => {
     const mainFormTextarea = $('#textArea');
 
-    $('.count').text(mainFormTextarea.attr('maxlength'))
+    $('.count').text(mainFormTextarea.attr('maxlength'));
 
     mainFormTextarea.on('change', (e)=>{
         const $this = $(e.currentTarget);
@@ -79,7 +81,55 @@ const checkTextareaLength = () => {
 
         (val) ? $textPlaceholder.hide() : $textPlaceholder.show();
     })
-}
+};
+
+const initPeoplesCarousel = () => {
+    if(isDesktop && !peoplesSliderInited) {
+        peoplesSliderInited = true;
+        $('#peopleListCarousel').addClass('owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            // autoplay: true,
+            autoplay: false,
+            autoplayHoverPause: true,
+            autoplaySpeed: 4000,
+            navSpeed: 2000,
+            mouseDrag: false,
+            responsive:{
+                1000:{
+                    items: 3
+                }
+            },
+/*            onTranslated: changeSliderOffsets,
+            onDragged: changeSliderOffsets,
+            onInitialized : changeSliderOffsets,*/
+        });
+    }
+};
+
+/*const changeSliderOffsets = (e) => {
+    const element   = e.target;
+    const $slider = $(element);
+    setTimeout(()=>{
+        const $active = $slider.find('.owl-item.active');
+        $slider.find('.owl-item').each((i,el)=>{
+            const $el = $(el);
+            const index = $active.index($el);
+            const inFocusIndex = `focus-${index}`;
+
+            if($el.hasClass('active')) {
+                $el.addClass('focus');
+                $el.addClass(inFocusIndex);
+                $el.data('index',index);
+                $el.removeClass('focus-'+$el.data('index'));
+            } else {
+                $el.removeClass('focus');
+            }
+
+        });
+    },0)
+};*/
 
 const initClientsCarousel = () => {
     $('#clientsSlider').addClass('owl-carousel').owlCarousel({
@@ -106,7 +156,7 @@ const initClientsCarousel = () => {
             }
         }
     })
-}
+};
 
 const initServicesCarousel = () => {
     const $container = $('#servicesSlider');
@@ -306,33 +356,31 @@ const checkCurveAnimate = () => {
     }
 };
 
-// const initLinksCarousel = () => {
-//
-//     const $boxLinks = $('.grey__box-links');
-//
-//     if($boxLinks.children().length > 2) {
-//         $('.grey__box-links').addClass('owl-carousel').owlCarousel({
-//             // nav: true,
-//             // autoplay: false,
-//             // loop: true,
-//             margin: 10,
-//             autoplayHoverPause: true,
-//             autoplaySpeed: 2000,
-//             navSpeed: 2000,
-//             dragEndSpeed: 2000,
-//             responsive:{
-//                 0:{
-//                     items: 1
-//                 },
-//                 480:{
-//                     items: 2
-//                 },
-//             }
-//         })
-//     } else {
-//         $boxLinks.addClass('noSlider');
-//     }
-// };
+const initLinksCarousel = () => {
+
+    const $boxLinks = $('.grey__box-links');
+
+    if($boxLinks.children().length > 2) {
+        $boxLinks.addClass('owl-carousel').owlCarousel({
+            nav: true,
+            // autoplay: false,
+            // loop: true,
+            margin: 10,
+            autoplayHoverPause: true,
+            autoplaySpeed: 2000,
+            navSpeed: 2000,
+            dragEndSpeed: 2000,
+            responsive:{
+                0:{
+                    items: 2
+                },
+            }
+        })
+    }
+    // else {
+    //     $boxLinks.addClass('noSlide2r');
+    // }
+};
 
 const registerPoupClose = () => {
     $doc.on('click', '.popup__close, .popup__backdrop', ()=>{
@@ -355,13 +403,16 @@ const showPopup = (selector) => {
 
 
 $doc.on('ready', () => {
-    checkViewport();
+    $('.removed').remove();
+
+    switchViewportVars();
     checkEmptyFields();
     toggleMobileMenu();
     setBgByImg();
+    initPeoplesCarousel();
     initClientsCarousel();
     initServicesCarousel();
-    // initLinksCarousel();
+    initLinksCarousel();
     checkTextareaLength();
     checkSubMenus();
     formHandler();
@@ -387,7 +438,7 @@ $win.on('scroll', ()=>{
 });
 
 $win.on('resize', () => {
-    checkViewport();
+    switchViewportVars();
 
     const winWidth = $win.width();
 
@@ -399,9 +450,18 @@ $win.on('resize', () => {
 
     if(isMobile || isDesktop && servicesSliderInited) {
         if(isSlider && $('#servicesSlider').data('owl.carousel')) {
-            $('#servicesSlider').data('owl.carousel').destroy();
             servicesSliderInited = false;
+            $('#servicesSlider').data('owl.carousel').destroy();
         };
+    }
+
+    if(!isDesktop && peoplesSliderInited) {
+        if($('#peopleListCarousel').data('owl.carousel')) {
+            peoplesSliderInited = false;
+            $('#peopleListCarousel').data('owl.carousel').destroy();
+        }
+    } else {
+        initPeoplesCarousel();
     }
 
     if(isTablet) {

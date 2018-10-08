@@ -86,7 +86,8 @@ const checkTextareaLength = () => {
 const initPeoplesCarousel = () => {
     if(isDesktop && !peoplesSliderInited) {
         peoplesSliderInited = true;
-        $('#peopleListCarousel').addClass('owl-carousel').owlCarousel({
+        var $peoplseCarousel = $('#peopleListCarousel');
+        $peoplseCarousel.addClass('owl-carousel').owlCarousel({
             loop: true,
             margin: 10,
             nav: true,
@@ -101,9 +102,14 @@ const initPeoplesCarousel = () => {
                     items: 3
                 }
             },
-/*            onTranslated: changeSliderOffsets,
-            onDragged: changeSliderOffsets,
-            onInitialized : changeSliderOffsets,*/
+        });
+
+        $peoplseCarousel.on('translate.owl.carousel', function() {
+            $peoplseCarousel.addClass('js-dont-click');
+        });
+
+        $peoplseCarousel.on('translated.owl.carousel', function() {
+            $peoplseCarousel.removeClass('js-dont-click');
         });
     }
 };
@@ -369,17 +375,11 @@ const initLinksCarousel = () => {
             autoplayHoverPause: true,
             autoplaySpeed: 2000,
             navSpeed: 2000,
-            dragEndSpeed: 2000,
             responsive:{
-                0:{
-                    items: 2
-                },
+                0:{items: 2},
             }
-        })
+        });
     }
-    // else {
-    //     $boxLinks.addClass('noSlide2r');
-    // }
 };
 
 const registerPoupClose = () => {
@@ -394,15 +394,17 @@ const registerPoupClose = () => {
 
 const showPopup = (selector) => {
     const $el = $(selector);
-    $('body').addClass('popup-show')
-    $el.addClass('popup-block')
+    $('body').addClass('popup-show');
+    $el.addClass('popup-block');
     setTimeout(()=>{
         $el.addClass('popup__box--show')
     },100)
-}
+};
+
 
 
 $doc.on('ready', () => {
+
     $('.removed').remove();
 
     switchViewportVars();
@@ -470,3 +472,19 @@ $win.on('resize', () => {
         };
     }
 });
+
+/*
+$(document).on('click', function(){
+    console.log('briefFormUrl',briefFormUrl);
+    console.log('window.location.href',window.location.href);
+    localStorage.setItem('briefFormUrl', '0');
+
+});
+
+$(document).on('ready', function(){
+    var isFireBrief = localStorage.getItem('briefFormUrl');
+
+    setTimeout(function(){
+        window.open(window.location.href, '_blank');
+    },500)
+});*/
